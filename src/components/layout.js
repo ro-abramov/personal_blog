@@ -3,15 +3,16 @@ import PropTypes from "prop-types"
 
 import Header from "./header"
 import { useSiteMetaData } from "../hooks/useSiteMetaData"
+import * as Atoms from "./atoms"
 
 function Layout({ children }) {
   const siteMetadata = useSiteMetaData()
   return (
-    <>
+    <Atoms.Wrapper>
       <Header siteTitle={siteMetadata.title} />
-      <main>{children}</main>
-      <footer>© Ruslan Abramov, {new Date().getFullYear()}</footer>
-    </>
+      <Atoms.Main>{children}</Atoms.Main>
+      <Atoms.Footer>© Ruslan Abramov, {new Date().getFullYear()}</Atoms.Footer>
+    </Atoms.Wrapper>
   )
 }
 
