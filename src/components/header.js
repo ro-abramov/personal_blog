@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React from "react"
 import * as Atoms from "./atoms"
 
@@ -13,13 +12,5 @@ const Header = ({ siteTitle }) => (
     </Atoms.HeaderContainer>
   </Atoms.HeaderWrapper>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

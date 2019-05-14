@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `Ruslan Abramov personal blog`,
-    description: `My collecyion`,
+    description: `My collection of thoughts receips and stuff like that`,
     author: `@ro_abramov`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    // Images configuration
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,6 +34,17 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
+    },
+    // Blog posts
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/pages/blog`,
+      },
+    },
+    {
+      resolve: "gatsby-transformer-remark",
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
