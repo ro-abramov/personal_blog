@@ -1,8 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Image from "gatsby-image"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const PostImage = styled(Image)`
+  width: 300px;
+`
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -10,7 +16,15 @@ const IndexPage = ({ data }) => (
     <ul>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <li>
-          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+          <article>
+            <Link to={node.fields.slug}>
+              <PostImage
+                fluid={node.frontmatter.cover.childImageSharp.fluid}
+                alt={node.frontmatter.title}
+              />
+              <header>{node.frontmatter.title}</header>
+            </Link>
+          </article>
         </li>
       ))}
     </ul>
@@ -24,6 +38,13 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 60) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           fields {
             slug
