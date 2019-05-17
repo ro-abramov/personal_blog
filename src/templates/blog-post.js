@@ -2,11 +2,13 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
+import { SEO } from "../components/seo"
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
   return (
     <Layout>
+      <SEO title={post.frontmatter.title} />
       <Image
         fluid={post.frontmatter.cover.childImageSharp.fluid}
         alt={post.frontmatter.title}
