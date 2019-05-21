@@ -9,6 +9,24 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati veritatis eni
 Aliquid unde tempora autem qui nesciunt amet, minus, in itaque aspernatur temporibus doloribus, a repellendus repellat debitis delectus ullam recusandae? Illum facilis aperiam quo ipsam, cumque sed temporibus eveniet minus.
 Laudantium sed odio quisquam explicabo architecto iure. Vel optio atque fugiat sint voluptate et vitae itaque saepe voluptatem, ullam veniam hic minus autem earum suscipit quia deleniti. Ut, ad fuga.
 Alias quia aliquid, culpa quas, sint magni voluptatem tempora ratione vero dolore dicta, aperiam obcaecati! Amet doloribus ipsa cupiditate pariatur veritatis! Ad, provident. Numquam minus aperiam, facere doloremque exercitationem minima?
+
+```javascript
+const BlogPost = ({ data }) => {
+  const { markdownRemark: post } = data
+  return (
+    <Layout>
+      <SEO title={post.frontmatter.title} />
+      <Image
+        fluid={post.frontmatter.cover.childImageSharp.fluid}
+        alt={post.frontmatter.title}
+      />
+      <h1>{post.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    </Layout>
+  )
+}
+```
+
 Deleniti sequi iure quos quidem aut in. Quisquam eius delectus quasi cum odio minus a, architecto qui ullam, optio distinctio, ut culpa eligendi impedit? Ipsa, dicta! Possimus facilis reprehenderit cupiditate.
 Magnam quasi, dicta officiis ducimus molestias eligendi fugit officia, velit natus nemo, quam dignissimos dolor libero nulla. Culpa et, voluptatibus dolor rem ratione maxime, labore dolorum ea repellendus laborum eaque?
 Eaque ut qui nobis quas, dicta, harum tempore reiciendis sunt odit minima asperiores quia incidunt neque sint, pariatur hic quam! Quas velit, tempora reiciendis quae neque modi excepturi. Numquam, nemo.

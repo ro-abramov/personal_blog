@@ -1,0 +1,26 @@
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background-color: transparent;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  margin: 1rem;
+  box-shadow: 0 2px 2px #0000001f;
+  border-radius: 4px;
+  background-color: #f5f2f06e;
+}
+
+.token.function,
+.token.class-name {
+  color: #713cc8;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #467318;
+}
