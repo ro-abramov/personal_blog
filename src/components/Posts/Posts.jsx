@@ -24,7 +24,7 @@ export const Posts = ({ posts }) => {
               <PostContent>
                 <PostHeader>
                   <PostTitle>{node.frontmatter.title}</PostTitle>
-                  <span>{node.timeToRead}</span>
+                  <span>{node.frontmatter.date}</span>
                 </PostHeader>
                 <p>{node.excerpt}</p>
               </PostContent>

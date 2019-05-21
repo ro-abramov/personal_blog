@@ -3,6 +3,8 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const chalk = require("chalk")
 
+const PAGE_SIZE = 10
+
 const createProgressTracker = (label, text) => {
   const start = () => {
     console.log(chalk.bgRed(`${label}:`) + chalk.red(` ${text}`) + " started")
@@ -34,7 +36,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  const progress = createProgressTracker("Markdown", "creating blog post pages")
+  let progress = createProgressTracker("Markdown", "creating blog post pages")
   progress.start()
   const {
     data: { allMarkdownRemark: markDownFiles },
@@ -51,12 +53,32 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+  // Create single post pages
   markDownFiles.edges.forEach(({ node }) => {
     actions.createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         slug: node.fields.slug,
+      },
+    })
+  })
+  progress.end()
+  progress = createProgressTracker(
+    "Markdown",
+    "create pagination list component"
+  )
+  progress.start()
+  Array.from({
+    length: Math.ceil(markDownFiles.edges.length / PAGE_SIZE),
+  }).forEach((_el, index) => {
+    console.log(`creating page ${index + 1}`)
+    actions.createPage({
+      path: `/page=${index + 1}`,
+      component: path.resolve(`./src/templates/blog-paginated-list.js`),
+      context: {
+        skip: index * PAGE_SIZE,
+        limit: PAGE_SIZE,
       },
     })
   })

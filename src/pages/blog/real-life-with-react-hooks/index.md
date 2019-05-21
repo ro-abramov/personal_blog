@@ -1,6 +1,6 @@
 ---
 title: "My first blog post"
-date: "2017-08-10"
+date: "2018-10-12"
 cover: ./remote.jpg
 ---
 
