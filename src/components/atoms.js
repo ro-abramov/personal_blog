@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #f4f5f7;
 `
 
 export const Main = styled.main`
@@ -28,6 +29,7 @@ export const HeaderWrapper = styled.header`
   padding: 0.4rem;
   box-shadow: 0 0 5px #00000021;
   flex-shrink: 0;
+  background-color: #fff;
 `
 
 export const HeaderContainer = styled.div`

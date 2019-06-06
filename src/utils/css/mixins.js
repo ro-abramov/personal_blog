@@ -7,4 +7,10 @@ export const centerContent = ({ topMargin = 1 } = {}) => {
   `
 }
 
-export const colors = { main: `hsl(266, 63%, 48%)`, mainActive: "#3498DB" }
+export const colors = {
+  main: `hsl(266, 63%, 48%)`,
+  mainActive: "#3498DB",
+}
+export const cssConstants = {
+  boxShadow: "0 1px 0 #d8e5ee",
+}
