@@ -33,9 +33,31 @@ export const HeaderWrapper = styled.header`
 `
 
 export const HeaderContainer = styled.div`
-  ${centerContent({ topMargin: 0 })}
+  ${centerContent({ topMargin: 0 })};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 export const SiteTitle = styled.h1`
   margin-bottom: 0;
+`
+
+export const NavLinks = styled.nav`
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+`
+
+export const NavLinksList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  & > li:last-child {
+    margin-bottom: 0;
+  }
+`
+
+export const NavLinksItem = styled.li`
+  margin-left: 1rem;
 `
