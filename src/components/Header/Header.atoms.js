@@ -28,6 +28,10 @@ export const SiteTitleLink = styled(StyledLink)`
   }
 `
 
+export const NavLink = styled(SiteTitleLink)`
+  font-weight: bold;
+`
+
 export const NavLinks = styled.nav`
   display: flex;
   margin-left: auto;
@@ -45,12 +49,4 @@ export const NavLinksList = styled.ul`
 
 export const NavLinksItem = styled.li`
   margin-left: 1rem;
-  ${StyledLink} {
-    color: ${colors.accent};
-    font-weight: bold;
-    font-size: 1rem;
-    &:hover {
-      color: ${colors.secondary};
-    }
-  }
 `
