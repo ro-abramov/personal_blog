@@ -18,6 +18,7 @@ const layoutElementsConfigs = [
 const IndexPage = ({ data }) => {
   const {
     allMarkdownRemark: { edges: posts },
+    allVideosYaml: { edges: videos },
     file: { childImageSharp: image },
   } = data
   return (
@@ -67,27 +68,20 @@ const IndexPage = ({ data }) => {
         <atoms.GridElement col="1 / span 12" as={atoms.VideoSectionTitle}>
           Talks
         </atoms.GridElement>
-        <atoms.GridElement col="1 / span 4">
-          <Card
-            title="Talk 1"
-            description="Talk #1"
-            image="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1040&q=80"
-          />
-        </atoms.GridElement>
-        <atoms.GridElement col="5 / span 4">
-          <Card
-            title="Talk 1"
-            description="Talk #1"
-            image="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1040&q=80"
-          />
-        </atoms.GridElement>
-        <atoms.GridElement col="9 / span 4">
-          <Card
-            title="Talk 1"
-            description="Talk #1"
-            image="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1040&q=80"
-          />
-        </atoms.GridElement>
+        {videos.map(({ node: video }, index) => (
+          <atoms.GridElement
+            col={`${4 * index + 1} / span 4`}
+            key={video.videoId}
+          >
+            <Card
+              title={video.name}
+              description={video.description}
+              image={`https://img.youtube.com/vi/${
+                video.videoId
+              }/mqdefault.jpg`}
+            />
+          </atoms.GridElement>
+        ))}
         <atoms.GridElement col="1 / span 12" as={atoms.SectionTitle}>
           This is me
         </atoms.GridElement>
@@ -131,6 +125,18 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 1200, quality: 100) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    allVideosYaml(limit: 3, sort: { fields: date }) {
+      edges {
+        node {
+          id
+          name
+          videoId
+          lang
+          description
+          date(formatString: "MM/DD/YYYY")
         }
       }
     }
