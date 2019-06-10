@@ -22,7 +22,9 @@ export function Profile() {
   return (
     <atoms.ProfileContainer>
       <atoms.ProfilePictureContainer>
-        <Image fluid={image.fluid} alt="This is me" />
+        <atoms.ProfilePicture>
+          <Image fluid={image.fluid} alt="This is me" />
+        </atoms.ProfilePicture>
       </atoms.ProfilePictureContainer>
       <atoms.ProfileDescriptionContainer>
         <atoms.ProfileNameWrapper>
@@ -43,12 +45,16 @@ export function Profile() {
           Software engineer with 5+ years of experience in web development with
           primary focus in frontend development with React library. Have an
           experience in setting up and implementing initial architecture of a
-          web application. Improve load-time performance of web pages. Lead a
-          team of developers. Gave talks on technical conferences on several
-          topics connected to web development with React library. Have an
-          experience in mentoring and conducting lectures both local (state
-          universities and remote). Take active participation in local front-end
-          community.
+          web application.
+        </atoms.ProfileSummary>
+        <atoms.ProfileSummary>
+          Improve load-time performance of web pages. Lead a team of developers.
+        </atoms.ProfileSummary>
+        <atoms.ProfileSummary>
+          Gave talks on technical conferences on several topics connected to web
+          development with React library. Have an experience in mentoring and
+          conducting lectures both local (state universities and remote). Take
+          active participation in local front-end community.
         </atoms.ProfileSummary>
       </atoms.ProfileDescriptionContainer>
     </atoms.ProfileContainer>

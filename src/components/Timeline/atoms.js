@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { cssConstants } from "../../utils/css/mixins"
+import { cssConstants, colors } from "../../utils/css/mixins"
 
 export const TimelineContainer = styled.ul`
   padding: 0;
@@ -19,11 +19,12 @@ export const TimelineContainer = styled.ul`
 
 export const TimelineInfoBox = styled.article`
   width: calc(50% - 4rem);
+  color: ${colors.shade} !important;
   background-color: #fff;
   border-radius: 4px;
   padding: 1rem;
   position: relative;
-  box-shadow: ${cssConstants.boxShadow};
+  box-shadow: ${cssConstants.boxShadowLarge};
   &:after {
     content: "";
     display: block;

@@ -1,23 +1,23 @@
 import React from "react"
-import PropTypes from "prop-types"
 
-import Header from "./header"
+import { Header } from "./Header"
 import { useSiteMetaData } from "../hooks/useSiteMetaData"
-import * as Atoms from "./atoms"
+import * as atoms from "./atoms"
 
-function Layout({ children }) {
+export function Layout({ children }) {
   const siteMetadata = useSiteMetaData()
   return (
-    <Atoms.Wrapper>
-      <Header siteTitle={siteMetadata.title} />
-      <Atoms.Main>{children}</Atoms.Main>
-      <Atoms.Footer>© Ruslan Abramov, {new Date().getFullYear()}</Atoms.Footer>
-    </Atoms.Wrapper>
+    <>
+      <atoms.GlobalStyles />
+      <atoms.LayoutContainer>
+        <atoms.Header>
+          <Header siteTitle={siteMetadata.title} />
+        </atoms.Header>
+        <atoms.Main>{children}</atoms.Main>
+        <atoms.Footer>
+          © Ruslan Abramov, {new Date().getFullYear()}
+        </atoms.Footer>
+      </atoms.LayoutContainer>
+    </>
   )
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
