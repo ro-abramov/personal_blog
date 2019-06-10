@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { colors, centerContent } from "../utils/css/mixins"
 import { Link } from "gatsby"
+import { colors, centerContent } from "../../utils/css/mixins"
 
 export const Grid = styled.div`
   display: grid;

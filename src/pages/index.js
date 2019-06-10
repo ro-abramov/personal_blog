@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Image from "gatsby-image"
-import * as atoms from "./atoms"
+import * as atoms from "../components/atoms/atoms"
 
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
     file: { childImageSharp: image },
   } = data
   return (
-    <Layout>
+    <Layout isMainPage>
       <atoms.Grid>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <atoms.Cover>

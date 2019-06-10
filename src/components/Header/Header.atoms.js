@@ -9,8 +9,23 @@ export const HeaderContainer = styled.div`
   padding: 0.4rem 1rem;
 `
 
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${colors.light};
+  &:hover {
+    color: ${colors.secondary};
+  }
+`
+
 export const SiteTitle = styled.h1`
   margin-bottom: 0;
+`
+
+export const SiteTitleLink = styled(StyledLink)`
+  color: ${({ color = colors.light }) => color};
+  &:hover {
+    color: ${({ hoverColor = colors.secondary }) => hoverColor};
+  }
 `
 
 export const NavLinks = styled.nav`
@@ -25,14 +40,6 @@ export const NavLinksList = styled.ul`
   margin: 0;
   & > li:last-child {
     margin-bottom: 0;
-  }
-`
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${colors.light};
-  &:hover {
-    color: ${colors.secondary};
   }
 `
 

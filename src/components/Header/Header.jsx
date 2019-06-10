@@ -1,12 +1,12 @@
 import React from "react"
 import * as atoms from "./Header.atoms"
 
-export const Header = ({ siteTitle }) => (
+export const Header = ({ siteTitle, inLightStyles }) => (
   <atoms.HeaderContainer>
     <atoms.SiteTitle>
-      <atoms.StyledLink to="/" title={siteTitle}>
+      <atoms.SiteTitleLink to="/" title={siteTitle}>
         {"${ro_abramov}"}
-      </atoms.StyledLink>
+      </atoms.SiteTitleLink>
     </atoms.SiteTitle>
     <atoms.NavLinks>
       <atoms.NavLinksList>
