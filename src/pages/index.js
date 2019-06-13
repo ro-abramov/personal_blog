@@ -76,9 +76,14 @@ const IndexPage = ({ data }) => {
             <Card
               title={video.name}
               description={video.description}
-              image={`https://img.youtube.com/vi/${
-                video.videoId
-              }/mqdefault.jpg`}
+              renderImage={() => (
+                <img
+                  src={`https://img.youtube.com/vi/${
+                    video.videoId
+                  }/mqdefault.jpg`}
+                  alt={`Cover for video ${video.name}`}
+                />
+              )}
             />
           </atoms.GridElement>
         ))}

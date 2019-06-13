@@ -5,12 +5,14 @@ export function Card({
   dark = false,
   title,
   description,
+  renderImage,
   renderFooter,
-  image,
 }) {
   return (
     <atoms.CardWrapper dark={dark}>
-      {image ? <atoms.CardImage src={image} /> : null}
+      {renderImage ? (
+        <atoms.CardImageWrapper>{renderImage()}</atoms.CardImageWrapper>
+      ) : null}
       <atoms.CardContent>
         <atoms.CardTitle>{title}</atoms.CardTitle>
         <atoms.CardDescription>{description}</atoms.CardDescription>

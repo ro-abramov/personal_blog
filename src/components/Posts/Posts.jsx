@@ -1,37 +1,37 @@
-import React from "react"
-import { Link } from "gatsby"
-import {
-  PostImage,
-  Post,
-  PostsList,
-  PostArticle,
-  PostHeader,
-  PostContent,
-  PostTitle,
-} from "./atoms"
+import React from 'react'
+import * as atoms from './Posts.atoms'
+import { Card } from '../Card/Card'
 
 export const Posts = ({ posts }) => {
-  return (
-    <PostsList>
-      {posts.map(({ node }) => (
-        <Post key={node.fields.slug}>
-          <Link to={node.fields.slug}>
-            <PostArticle>
-              <PostImage
-                fluid={node.frontmatter.cover.childImageSharp.fluid}
-                alt={node.frontmatter.title}
-              />
-              <PostContent>
-                <PostHeader>
-                  <PostTitle>{node.frontmatter.title}</PostTitle>
-                  <span>{node.frontmatter.date}</span>
-                </PostHeader>
-                <p>{node.excerpt}</p>
-              </PostContent>
-            </PostArticle>
-          </Link>
-        </Post>
-      ))}
-    </PostsList>
-  )
+    return (
+        <atoms.PostsList>
+            {posts.map(({ node }) => (
+                <atoms.Post key={node.fields.slug}>
+                    <atoms.WrapperLink to={node.fields.slug}>
+                        <Card
+                            title={node.frontmatter.title}
+                            description={node.excerpt}
+                            renderImage={() => (
+                                <atoms.PostImage
+                                    fluid={node.frontmatter.cover.childImageSharp.fluid}
+                                    alt={node.frontmatter.title}
+                                />
+                            )}
+                            renderFooter={() => (
+                                <>
+                                    <atoms.PostInfo>{node.frontmatter.date}</atoms.PostInfo>
+                                    <atoms.PostInfo>
+                                        <span role="img" aria-label="clock icon">
+                                            🕙{' '}
+                                        </span>
+                                        {node.timeToRead} min read
+                                    </atoms.PostInfo>
+                                </>
+                            )}
+                        />
+                    </atoms.WrapperLink>
+                </atoms.Post>
+            ))}
+        </atoms.PostsList>
+    )
 }
