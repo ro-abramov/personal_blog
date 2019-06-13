@@ -1,0 +1,24 @@
+type: 'Project'
+title: 'EPAM Systems Project 5'
+description: Worked on solution improvement program for global e-commerce web application
+location: Ryazan, Russia
+position: Lead Frontend Developer
+startDate: '2017-11-01'
+duties:
+    - Participate in integration team according to Nexus Framework for Scaling Scrum
+    - Work on introduction of front-end build step into existing CI/CD process
+    - Work on load time performance optimization of Product Detail Page (PDP) - reduce load time by 200%, stabilize amount of transferred data, increased bounce rate by 120%
+    - Develop tool for selecting an appropriate solution based on specific user requirements
+techStack:
+    - React
+    - Redux
+    - Redux Thunk
+    - jQuery
+    - Hyperapp
+    - LessCSS
+    - Webpack
+    - Cypress
+    - Pug
+    - Java
+    - ATG
+    - JSP

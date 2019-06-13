@@ -1,0 +1,22 @@
+type: 'Project'
+title: 'EPAM Systems Project 6'
+description: Work on a startup project for one of the main banks in Russian Federation
+location: Ryazan, Russia
+position: Lead Frontend Developer
+startDate: '2019-01-01'
+duties:
+    - Set up initial project structure and architecture
+    - Elaborate on approaches for state-management in application
+    - Introduce unit testing and work with DevOps engineer on establishing CI process
+    - Create docker images with multi-staged builds for front-end application and for reverse-proxy
+    - Establish code review culture and rules
+techStack:
+    - React
+    - TypeScript
+    - SASS
+    - React Testing Library
+    - Docker
+    - OpenShift
+    - Jenkins
+    - Gerrit
+    - Sonar

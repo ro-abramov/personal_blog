@@ -1,0 +1,16 @@
+type: Project
+title: Index Studio
+description: Take participation in creation of Content-Management System (CMS)  designed as a lightweight blog for internal use. The system is mobile-friendly and meets strict accessibility requirements.
+location: Ryazan, Russia
+position: Developer
+startDate: '2014-04-01'
+duties:
+    - Develop end-points on backend in laravel php framework according to REST model
+    - Create documentation of end-points and maintain documentation
+    - Develop admin interface using SASS, ReactJS
+techStack:
+    - ReactJS
+    - SASS
+    - Laravel
+    - php5
+    - Apache
