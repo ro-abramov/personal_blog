@@ -14,7 +14,6 @@ export const PostsList = styled.ul`
     padding: 0;
     margin: 0;
     list-style: none;
-    padding-top: 3rem;
 `
 
 export const PostImage = styled(Image)`
@@ -24,7 +23,7 @@ export const PostImage = styled(Image)`
 export const Post = styled.li`
     margin: 0;
     padding: 0;
-    margin-bottom: 3rem;
+    grid-row-end: span ${({ vertical = false }) => (vertical ? 3 : 2)};
 `
 
 export const PostInfo = styled.span`

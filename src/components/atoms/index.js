@@ -1,1 +1,2 @@
-export { CenterContent } from "./CenterContent"
+export { CenterContent } from './CenterContent'
+export { SectionTitle } from '../SectionTitle'

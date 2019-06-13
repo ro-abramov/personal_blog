@@ -6,7 +6,7 @@ export const Posts = ({ posts }) => {
     return (
         <atoms.PostsList>
             {posts.map(({ node }) => (
-                <atoms.Post key={node.fields.slug}>
+                <atoms.Post key={node.fields.slug} vertical={node.frontmatter.coverImageOrientation === 'vertical'}>
                     <atoms.WrapperLink to={node.fields.slug}>
                         <Card
                             title={node.frontmatter.title}

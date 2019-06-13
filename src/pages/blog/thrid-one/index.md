@@ -1,7 +1,8 @@
 ---
-title: "My thrid blog post"
-date: "2019-09-21"
+title: 'My thrid blog post'
+date: '2019-09-21'
 cover: ./remote5.jpg
+coverImageOrientation: 'horizontal'
 ---
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, expedita? Sequi aperiam enim unde, exercitationem possimus accusamus incidunt obcaecati perferendis hic illo vel eveniet tempore numquam autem quis eum dolores?
@@ -10,18 +11,15 @@ Aliquid unde tempora autem qui nesciunt amet, minus, in itaque aspernatur tempor
 
 ```javascript
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
-  return (
-    <Layout>
-      <SEO title={post.frontmatter.title} />
-      <Image
-        fluid={post.frontmatter.cover.childImageSharp.fluid}
-        alt={post.frontmatter.title}
-      />
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Layout>
-  )
+    const { markdownRemark: post } = data
+    return (
+        <Layout>
+            <SEO title={post.frontmatter.title} />
+            <Image fluid={post.frontmatter.cover.childImageSharp.fluid} alt={post.frontmatter.title} />
+            <h1>{post.frontmatter.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Layout>
+    )
 }
 ```
 

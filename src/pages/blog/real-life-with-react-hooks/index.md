@@ -1,7 +1,8 @@
 ---
-title: "My first blog post"
-date: "2018-10-12"
+title: 'My first blog post'
+date: '2018-10-12'
 cover: ./remote.jpg
+coverImageOrientation: 'vertical'
 ---
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, expedita? Sequi aperiam enim unde, exercitationem possimus accusamus incidunt obcaecati perferendis hic illo vel eveniet tempore numquam autem quis eum dolores?
@@ -12,18 +13,15 @@ Alias quia aliquid, culpa quas, sint magni voluptatem tempora ratione vero dolor
 
 ```javascript
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
-  return (
-    <Layout>
-      <SEO title={post.frontmatter.title} />
-      <Image
-        fluid={post.frontmatter.cover.childImageSharp.fluid}
-        alt={post.frontmatter.title}
-      />
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Layout>
-  )
+    const { markdownRemark: post } = data
+    return (
+        <Layout>
+            <SEO title={post.frontmatter.title} />
+            <Image fluid={post.frontmatter.cover.childImageSharp.fluid} alt={post.frontmatter.title} />
+            <h1>{post.frontmatter.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Layout>
+    )
 }
 ```
 
