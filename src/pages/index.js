@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
 import * as atoms from '../components/atoms/atoms'
 
-import { Layout } from '../components/layout'
+import { Layout } from '../components/Layout'
 import { SEO } from '../components/seo'
 import { Profile } from '../components/Profile'
 import { Card } from '../components/Card/Card'

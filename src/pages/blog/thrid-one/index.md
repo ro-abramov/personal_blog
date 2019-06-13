@@ -1,5 +1,5 @@
 ---
-title: 'My thrid blog post'
+title: 'My third blog post'
 date: '2019-09-21'
 cover: ./remote5.jpg
 coverImageOrientation: 'horizontal'
