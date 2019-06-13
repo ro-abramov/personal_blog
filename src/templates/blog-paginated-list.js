@@ -5,15 +5,18 @@ import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 import { Posts } from "../components/Posts"
 import { Pagination } from "../components/Pagination"
+import { CenterContent } from "../components/atoms/index"
 
 export default ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Posts posts={data.allMarkdownRemark.edges} />
-    <Pagination
-      current={data.allMarkdownRemark.pageInfo.currentPage}
-      total={data.allMarkdownRemark.pageInfo.pageCount}
-    />
+    <CenterContent>
+      <Posts posts={data.allMarkdownRemark.edges} />
+      <Pagination
+        current={data.allMarkdownRemark.pageInfo.currentPage}
+        total={data.allMarkdownRemark.pageInfo.pageCount}
+      />
+    </CenterContent>
   </Layout>
 )
 

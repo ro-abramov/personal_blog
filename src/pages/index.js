@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
         </atoms.Cover>
         <atoms.GridElement col="1 / span 7" row="2 / span 4">
           <atoms.ShortInfo>
-            Hi there, my name is Ruslan Abramov and I welcome you on my blog.{" "}
+            Hi there, my name is Ruslan Abramov and I welcome you on my blog.
             <br />
             Here you may find my collection of useful tips and tricks about
             front-end development, time-management and other related stuff.
