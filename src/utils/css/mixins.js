@@ -14,7 +14,7 @@ export const colors = {
     dark: `#7D6594`,
     shade: `#202950`,
     fullDark: `#13172a`,
-    light: `#F5F4F0`,
+    light: `#ECEAEE`,
     accent: `#ffc452`,
 }
 export const cssConstants = {
@@ -25,4 +25,5 @@ export const cssConstants = {
 
 export const breakpoints = {
     mobile: '@media (max-width: 480px)',
+    mobilePlus: '@media (min-width: 481px)',
 }

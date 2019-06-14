@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import format from 'date-fns/format'
-import * as atoms from './atoms'
+import * as atoms from './Timeline.atoms'
 import { useStaticQuery } from 'gatsby'
 
 export function Timeline() {

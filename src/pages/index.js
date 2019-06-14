@@ -6,7 +6,6 @@ import * as atoms from '../components/atoms/atoms'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/seo'
 import { Profile } from '../components/Profile'
-import { Card } from '../components/Card'
 import { Link } from '../components/Link'
 import { Button } from '../components/Button'
 import { Grid, GridElement } from '../components/Grid'
@@ -46,10 +45,8 @@ const IndexPage = ({ data }) => {
                 <GridElement col="1 / span 12" as={SectionTitle}>
                     This is me
                 </GridElement>
-                <GridElement col="1 / span 12">
-                    <Profile />
-                </GridElement>
             </Grid>
+            <Profile />
         </Layout>
     )
 }

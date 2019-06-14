@@ -9,8 +9,8 @@ function About() {
     return (
         <Layout>
             <SEO title="About me" />
+            <Profile />
             <CenterContent>
-                <Profile />
                 <SectionTitle>My past projects</SectionTitle>
                 <Timeline />
             </CenterContent>
