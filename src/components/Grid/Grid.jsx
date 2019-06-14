@@ -6,7 +6,7 @@ export const Grid = styled.div`
     grid-template-columns: ${({ columns = `repeat(12, 1fr)` }) => columns};
     grid-auto-rows: ${({ rows = `minmax(5rem, max-content)` }) => rows};
     grid-gap: ${({ gap = `1rem` }) => gap};
-    ${centerContent({ topMargin: 0 })};
+    ${centerContent({ topMargin: 2 })};
 
     ${breakpoints.mobile} {
         display: flex;

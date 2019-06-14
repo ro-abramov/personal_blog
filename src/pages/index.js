@@ -9,7 +9,6 @@ import { Profile } from '../components/Profile'
 import { Link } from '../components/Link'
 import { Button } from '../components/Button'
 import { Grid, GridElement } from '../components/Grid'
-import { SectionTitle } from '../components/atoms/index'
 import { RecentPosts } from '../components/RecentPosts'
 import { Videos } from '../components/Videos'
 
@@ -42,9 +41,6 @@ const IndexPage = ({ data }) => {
                 </GridElement>
                 <RecentPosts posts={posts} />
                 <Videos videos={videos} />
-                <GridElement col="1 / span 12" as={SectionTitle}>
-                    This is me
-                </GridElement>
             </Grid>
             <Profile />
         </Layout>

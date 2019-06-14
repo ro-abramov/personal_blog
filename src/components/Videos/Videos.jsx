@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card } from '../Card'
 import { GridElement } from '../Grid'
 import { SectionTitle } from '../atoms'
 import * as atoms from './Videos.atoms'

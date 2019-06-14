@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { cssConstants, colors, centerContent, breakpoints } from '../../utils/css/mixins'
 
-export const ProfileContainer = styled.article`
+export const ProfileContainer = styled.section`
     background-color: ${colors.fullDark};
-    padding: 4rem 1rem;
+    padding: 2rem 1rem 3rem;
     color: ${colors.light};
     &:after {
         content: '';

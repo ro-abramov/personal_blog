@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as atoms from './atoms'
+import { SectionTitle } from '../atoms/index'
 
 export function Profile() {
     const {
@@ -21,6 +22,7 @@ export function Profile() {
     )
     return (
         <atoms.ProfileContainer>
+            <SectionTitle light>This is me</SectionTitle>
             <atoms.ProfileWrapper>
                 <atoms.ProfilePictureContainer>
                     <atoms.ProfilePicture>
