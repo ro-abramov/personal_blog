@@ -2,6 +2,7 @@ import React from 'react'
 import { Card } from '../Card'
 import { GridElement } from '../Grid'
 import { SectionTitle } from '../atoms'
+import * as atoms from './Videos.atoms'
 
 const getImageUrl = id => `https://img.youtube.com/vi/${id}/mqdefault.jpg`
 
@@ -13,7 +14,7 @@ export function Videos({ videos }) {
             </GridElement>
             {videos.map(({ node: video }, index) => (
                 <GridElement col={`${4 * index + 1} / span 4`} key={video.videoId}>
-                    <Card
+                    <atoms.VideoCard
                         title={video.name}
                         description={video.description}
                         renderImage={() => (
