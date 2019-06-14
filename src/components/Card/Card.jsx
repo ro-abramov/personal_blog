@@ -1,9 +1,9 @@
 import React from 'react'
 import * as atoms from './Card.atoms'
 
-export function Card({ dark = false, title, description, renderImage, renderFooter }) {
+export function Card({ dark = false, title, description, renderImage, renderFooter, className = '' }) {
     return (
-        <atoms.CardWrapper dark={dark} withPadding={Boolean(renderImage)}>
+        <atoms.CardWrapper className={className} dark={dark} withPadding={Boolean(renderImage)}>
             {renderImage ? <atoms.CardImageWrapper>{renderImage()}</atoms.CardImageWrapper> : null}
             <atoms.CardContent>
                 <atoms.CardTitle>{title}</atoms.CardTitle>

@@ -1,19 +1,5 @@
 import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { colors, centerContent } from '../../utils/css/mixins'
-
-export const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: minmax(5rem, max-content);
-    grid-gap: 1rem;
-    ${centerContent({ topMargin: 0 })};
-`
-
-export const GridElement = styled.div`
-    grid-column: ${({ col = 'auto' }) => col};
-    grid-row: ${({ row = 'auto' }) => row};
-`
+import { colors, breakpoints } from '../../utils/css/mixins'
 
 export const Cover = styled.div`
     position: absolute;
@@ -23,6 +9,9 @@ export const Cover = styled.div`
     height: 37.5rem;
     z-index: -1;
     overflow: hidden;
+    ${breakpoints.mobile} {
+        height: auto;
+    }
     & > * {
         position: relative;
         filter: blur(3px);
@@ -41,20 +30,21 @@ export const Cover = styled.div`
 
 export const ShortInfo = styled.div`
     color: #fff;
-`
-
-export const AccentLink = styled(Link)`
-    color: ${colors.accent};
-    text-decoration: none;
-    &:hover {
-        color: ${colors.secondary};
+    ${breakpoints.mobile} {
+        font-size: 0.8rem;
     }
 `
 
 export const ShortInfoButtonsGroup = styled.div`
     margin: 1rem 0;
 
-    ${AccentLink} {
-        margin-left: 1rem;
+    & > *:first-child {
+        margin-right: 1rem;
+    }
+
+    ${breakpoints.mobile} {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `
