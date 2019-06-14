@@ -12,6 +12,7 @@ import { Button } from '../components/Button'
 import { Grid, GridElement } from '../components/Grid'
 import { SectionTitle } from '../components/atoms/index'
 import { RecentPosts } from '../components/RecentPosts'
+import { Videos } from '../components/Videos'
 
 const IndexPage = ({ data }) => {
     const {
@@ -41,23 +42,7 @@ const IndexPage = ({ data }) => {
                     </atoms.ShortInfoButtonsGroup>
                 </GridElement>
                 <RecentPosts posts={posts} />
-                <GridElement col="1 / span 12" as={SectionTitle}>
-                    Talks
-                </GridElement>
-                {videos.map(({ node: video }, index) => (
-                    <GridElement col={`${4 * index + 1} / span 4`} key={video.videoId}>
-                        <Card
-                            title={video.name}
-                            description={video.description}
-                            renderImage={() => (
-                                <img
-                                    src={`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`}
-                                    alt={`Cover for video ${video.name}`}
-                                />
-                            )}
-                        />
-                    </GridElement>
-                ))}
+                <Videos videos={videos} />
                 <GridElement col="1 / span 12" as={SectionTitle}>
                     This is me
                 </GridElement>
