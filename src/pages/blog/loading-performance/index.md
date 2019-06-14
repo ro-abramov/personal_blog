@@ -1,5 +1,5 @@
 ---
-title: Советы по оптимизации загрузки
+title: Some advice on loading performance
 date: '2018-11-12'
 cover: ./cover.jpg
 coverImageOrientation: 'horizontal'
@@ -7,11 +7,11 @@ coverImageOrientation: 'horizontal'
 
 ## 🚀 Brief intro
 
-Ни для кого не секрет, что от современных веб-сайтов ждут молниеносной загрузки за тысячную долю секунды, и работать они должны также плавно как и нативное приложение. Для разработчиков создаются инструменты, которые помогают в нахождение боттлнеков приложения (места в которых приложение работает медленно). Например в Google Chrome реализованы шикарные инструменты для аудита перформанса приложения, да и другие вендоры тоже не отстают (наверное). React тима выпустила новый профайлер, и если вы его еще не опробовали, то настоятельно рекомендую с ним [ознакомиться](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html).
+It shouldn't be a secret that modern web apps are supposed to load in a thousand of a second, and work as smooth as native app. Tools for finding application bottlenecks are created for developers. For instance, in Google Chrome there are really awesome tools for auditing application performance, and other vendors also try not to fall behind (probably). React team has made some improvements in its devtool extension, and has added a new profiler. If you haven't tried it yet, then you definitely should at least read a [blog post](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html).
 
 Помимо этого в сети каждую минуту появляются статьи и советы как правильно улучшать производительность (как например и эта статья). Одним из корифеев можно считать Addie Osmani. У него есть целый цикл статей о том как надо и как не надо делать приложения. И вообще, советую ознакомиться с его [блогом](https://medium.com/@addyosmani) на medium чтобы стать настоящим 🧙‍ в данном вопросе.
 
-В этой же статье, я постараюсь дать лишь несколько практических советов и также объяснить на простом языке, что и когда стоит использовать.
+In the article I'll try to give some practical advice with an easy explanation of what should be used and in what situation.
 
 ## 👨‍💻 Preloading
 

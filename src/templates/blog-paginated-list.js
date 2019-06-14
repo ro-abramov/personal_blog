@@ -6,6 +6,7 @@ import { SEO } from '../components/seo'
 import { Posts } from '../components/Posts'
 import { Pagination } from '../components/Pagination'
 import { CenterContent, SectionTitle } from '../components/atoms/index'
+import { Profile } from '../components/Profile'
 
 export default ({ data }) => (
     <Layout>
@@ -18,6 +19,7 @@ export default ({ data }) => (
                 total={data.allMarkdownRemark.pageInfo.pageCount}
             />
         </CenterContent>
+        <Profile />
     </Layout>
 )
 

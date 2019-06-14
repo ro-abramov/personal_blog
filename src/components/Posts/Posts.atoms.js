@@ -1,7 +1,7 @@
 import Image from 'gatsby-image'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { colors } from '../../utils/css/mixins'
+import { colors, breakpoints } from '../../utils/css/mixins'
 
 export const WrapperLink = styled(Link)`
     text-decoration: none;
@@ -14,6 +14,9 @@ export const PostsList = styled.ul`
     padding: 0;
     margin: 0;
     list-style: none;
+    ${breakpoints.mobile} {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const PostImage = styled(Image)`

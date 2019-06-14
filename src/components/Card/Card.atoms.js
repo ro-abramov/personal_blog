@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cssConstants, colors } from '../../utils/css/mixins'
+import { cssConstants, colors, breakpoints } from '../../utils/css/mixins'
 
 export const CardTitle = styled.h3`
     padding: 0.5rem 0;
@@ -48,6 +48,9 @@ export const CardContent = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    ${breakpoints.mobile} {
+        padding: 1rem;
+    }
 `
 
 export const CardWrapper = styled.article`
