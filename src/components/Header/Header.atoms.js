@@ -30,29 +30,8 @@ export const SiteTitleLink = styled(StyledLink)`
         color: ${({ hoverColor = colors.secondary }) => hoverColor};
     }
 `
-
-export const NavLink = styled(SiteTitleLink)`
-    font-weight: bold;
-    ${breakpoints.mobile} {
-        font-size: 0.9rem;
-    }
-`
-
-export const NavLinks = styled.nav`
+export const MenuWrapper = styled.div`
     display: flex;
     margin-left: auto;
     align-items: center;
-`
-
-export const NavLinksList = styled.ul`
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    & > li:last-child {
-        margin-bottom: 0;
-    }
-`
-
-export const NavLinksItem = styled.li`
-    margin-left: 1rem;
 `
