@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSpring, animated as a, config } from 'react-spring'
 import { colors } from '../../utils/css/mixins'
 
-const openD = {
+const openedTransformationConfig = {
     top: 'translate(2, 7) rotate(0)',
     center: 'translate(2, 19) rotate(0)',
     bottom: 'translate(2, 31) rotate(0)',
@@ -14,7 +14,7 @@ const openD = {
 //     bottom: 'translate(14, 20) rotate(-90)',
 // }
 
-const closeD = {
+const closedTransformationConfig = {
     top: 'translate(5, 32) rotate(-45)',
     center: 'translate(10, 4) rotate(45)',
     bottom: 'translate(5, 32) rotate(-45)',
@@ -24,7 +24,7 @@ export function MenuIcon({ color = colors.main, isOpened = false }) {
     const { top, center, bottom, color: interpolatedColor } = useSpring({
         // to: [{ ...inbetweenD, config: { ...config.stiff, duration: 100 } }, isOpened ? closeD : openD],
         // from: openD,
-        to: { ...(isOpened ? closeD : openD), color },
+        to: { ...(isOpened ? closedTransformationConfig : openedTransformationConfig), color },
         config: config.stiff,
     })
 
