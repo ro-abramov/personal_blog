@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background-color: ${colors.light};
     color: ${colors.shade} !important;
+    overflow-x: hidden;
   }
 `
 

@@ -11,12 +11,12 @@ export function Menu({ color, children }) {
     const childrenAsList = Children.toArray(children)
 
     const wrapperProps = useSpring({
-        to: { opacity: isOpened ? 1 : 0, transform: `translateY(${isOpened ? 0 : -200}px)` },
+        to: { opacity: isOpened ? 1 : 0, transform: `translateX(${isOpened ? 0 : 300}px)` },
         config: config.stiff,
     })
 
     const contentTrails = useTrail(childrenAsList.length, {
-        to: { transform: `translateX(${isOpened ? 0 : 50}px)` },
+        to: { transform: `translateY(${isOpened ? 0 : -50}px)` },
         config: config.stiff,
     })
 
@@ -26,7 +26,7 @@ export function Menu({ color, children }) {
                 <atoms.MenuNavList>
                     {contentTrails.map((trail, index) => {
                         return (
-                            <atoms.MenuNavListElement as={a.li} style={trail}>
+                            <atoms.MenuNavListElement as={a.li} style={trail} key={index}>
                                 {childrenAsList[index]}
                             </atoms.MenuNavListElement>
                         )

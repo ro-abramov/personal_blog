@@ -17,21 +17,37 @@ export const MenuIconWrapper = styled.button`
 
 export const MenuContainer = styled.nav`
     background-color: ${colors.light};
-    padding: 3rem 2rem 1rem;
+    padding: 0 6rem 0rem 1rem;
+    height: 48px;
     box-shadow: ${cssConstants.boxShadow};
     border-radius: ${cssConstants.borderRadius};
     position: absolute;
     right: 0;
-    top: 0;
+    top: -4px;
     width: max-content;
+    display: flex;
+    align-items: center;
+    ${breakpoints.mobile} {
+        padding: 3rem 0 1rem;
+        display: block;
+        height: auto;
+    }
 `
 
 export const MenuNavList = styled.ul`
     padding: 0;
     margin: 0;
     list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ${breakpoints.mobile} {
+        flex-direction: column;
+    }
 `
-export const MenuNavListElement = styled.li``
+export const MenuNavListElement = styled.li`
+    margin: 0;
+`
 
 export const MenuIconSvg = styled.svg`
     width: 40px;

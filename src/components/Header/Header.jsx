@@ -1,8 +1,9 @@
 import React from 'react'
+import { faHome, faBookReader, faUserSecret } from '@fortawesome/free-solid-svg-icons'
+
 import * as atoms from './Header.atoms'
 import { colors } from '../../utils/css/mixins'
 import { Menu } from '../Menu'
-import { Link } from '../Link'
 
 const headerColors = new Map([
     [
@@ -34,15 +35,18 @@ export const Header = ({ siteTitle, inLightStyles }) => {
             </atoms.SiteTitle>
             <atoms.MenuWrapper>
                 <Menu color={colorMap.accent}>
-                    <Link to="/" title="Link to Home page">
-                        Home
-                    </Link>
-                    <Link to="/page=1" title="Info about me">
-                        Blog
-                    </Link>
-                    <Link to="/about" title="Info about me">
-                        About
-                    </Link>
+                    <atoms.HeaderMenuLink to="/" title="Home page">
+                        <atoms.NavIcon icon={faHome} color={colors.main} title="Home" />
+                        <span>Home</span>
+                    </atoms.HeaderMenuLink>
+                    <atoms.HeaderMenuLink to="/page=1" title="Info about me">
+                        <atoms.NavIcon icon={faBookReader} color={colors.main} title="Blog" />
+                        <span>Blog</span>
+                    </atoms.HeaderMenuLink>
+                    <atoms.HeaderMenuLink to="/about" title="Info about me">
+                        <atoms.NavIcon icon={faUserSecret} color={colors.main} title="About me" />
+                        <span>About me</span>
+                    </atoms.HeaderMenuLink>
                 </Menu>
             </atoms.MenuWrapper>
         </atoms.HeaderContainer>

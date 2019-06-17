@@ -1,6 +1,9 @@
-import { Link } from 'gatsby'
+import { Link as GLink } from 'gatsby'
+
+import { Link } from '../Link'
 import styled from 'styled-components'
 import { colors, breakpoints } from '../../utils/css/mixins'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const HeaderContainer = styled.div`
     display: flex;
@@ -12,7 +15,7 @@ export const HeaderContainer = styled.div`
     }
 `
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(GLink)`
     text-decoration: none;
     color: ${colors.light};
     &:hover {
@@ -37,4 +40,20 @@ export const MenuWrapper = styled.div`
     display: flex;
     margin-left: auto;
     align-items: center;
+`
+
+export const NavIcon = styled(FontAwesomeIcon)`
+    margin-right: 0.2rem;
+    & + span {
+        font-size: 0.8rem;
+        margin-right: 1rem;
+        ${breakpoints.mobile} {
+            display: none;
+        }
+    }
+`
+
+export const HeaderMenuLink = styled(Link)`
+    padding: 0.4rem 1rem;
+    display: block;
 `
