@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSpring, animated as a, config } from 'react-spring'
 import { colors } from '../../utils/css/mixins'
+import * as atoms from './Menu.atoms'
 
 const openedTransformationConfig = {
     top: 'translate(2, 7) rotate(0)',
@@ -20,7 +21,7 @@ const closedTransformationConfig = {
     bottom: 'translate(5, 32) rotate(-45)',
 }
 
-export function MenuIcon({ color = colors.main, isOpened = false }) {
+export function MenuIcon({ color = colors.main, isOpened = false, style = {} }) {
     const { top, center, bottom, color: interpolatedColor } = useSpring({
         // to: [{ ...inbetweenD, config: { ...config.stiff, duration: 100 } }, isOpened ? closeD : openD],
         // from: openD,
@@ -29,10 +30,17 @@ export function MenuIcon({ color = colors.main, isOpened = false }) {
     })
 
     return (
-        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <atoms.MenuIconSvg
+            width="44"
+            height="44"
+            viewBox="0 0 44 44"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={style}
+        >
             <a.rect width="40" height="6" rx="3" fill={interpolatedColor} transform={top} />
             <a.rect width="40" height="6" rx="3" fill={interpolatedColor} transform={center} />
             <a.rect width="40" height="6" rx="3" fill={interpolatedColor} transform={bottom} />
-        </svg>
+        </atoms.MenuIconSvg>
     )
 }

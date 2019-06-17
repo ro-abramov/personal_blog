@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, cssConstants } from '../../utils/css/mixins'
+import { colors, cssConstants, breakpoints } from '../../utils/css/mixins'
 
 export const MenuWrapper = styled.div`
     position: relative;
@@ -32,3 +32,12 @@ export const MenuNavList = styled.ul`
     list-style-type: none;
 `
 export const MenuNavListElement = styled.li``
+
+export const MenuIconSvg = styled.svg`
+    width: 40px;
+    height: 40px;
+    ${breakpoints.mobile} {
+        width: 24px;
+        height: 24px;
+    }
+`

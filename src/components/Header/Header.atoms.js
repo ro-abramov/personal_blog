@@ -7,6 +7,9 @@ export const HeaderContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0.4rem 1rem;
+    ${breakpoints.mobile} {
+        padding: 0;
+    }
 `
 
 export const StyledLink = styled(Link)`

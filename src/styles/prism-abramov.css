@@ -3,24 +3,38 @@
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  background-color: transparent;
+    background-color: transparent;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  margin: 1rem;
-  box-shadow: 0 2px 2px #0000001f;
-  border-radius: 4px;
-  background-color: #f5f2f06e;
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+    margin: 1rem;
+    box-shadow: 0 2px 2px #0000001f;
+    border-radius: 4px;
+    background-color: #f5f2f06e;
+    font-size: 0.8rem;
+}
+
+p > code[class*='language-'],
+p > pre[class*='language-'] {
+    display: inline;
+    margin: 0;
+    background-color: transparent;
+    box-shadow: none;
+    font-weight: bold;
 }
 
 .token.function,
 .token.class-name {
-  color: #713cc8;
+    color: #713cc8;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #467318;
+    color: #467318;
+}
+
+blockquote {
+    border-left: 0.2625rem solid #8345d3;
 }
