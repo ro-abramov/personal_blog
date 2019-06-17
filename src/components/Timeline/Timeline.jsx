@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import format from 'date-fns/format'
 import * as atoms from './Timeline.atoms'
 import { useStaticQuery } from 'gatsby'
 
@@ -9,7 +8,7 @@ export function Timeline() {
         allPastProjectsYaml: { edges: pastProjects },
     } = useStaticQuery(graphql`
         query {
-            allPastProjectsYaml {
+            allPastProjectsYaml(sort: { fields: [date] }) {
                 edges {
                     node {
                         id
@@ -19,7 +18,7 @@ export function Timeline() {
                         description
                         location
                         position
-                        startDate
+                        date(formatString: "MM/DD/YYYY")
                         techStack
                     }
                 }
@@ -54,7 +53,7 @@ export function Timeline() {
                             </atoms.TimelineInfoTechContainer>
                         </atoms.TimelineInfoBox>
                         <atoms.TimelineIcon />
-                        <atoms.TimelineDate>{format(pastProject.startDate, 'MMM, YYYY')}</atoms.TimelineDate>
+                        <atoms.TimelineDate>{pastProject.date}</atoms.TimelineDate>
                     </atoms.TimelineElement>
                 )
             })}

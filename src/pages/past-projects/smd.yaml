@@ -3,7 +3,7 @@ title: 'EPAM Systems Project 6'
 description: Work on a startup project for one of the main banks in Russian Federation
 location: Ryazan, Russia
 position: Lead Frontend Developer
-startDate: '2019-01-01'
+date: 2019-01-01
 duties:
     - Set up initial project structure and architecture
     - Elaborate on approaches for state-management in application

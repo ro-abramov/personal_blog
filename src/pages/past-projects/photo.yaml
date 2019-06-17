@@ -3,7 +3,7 @@ title: Freelance
 description: Site for a photographer. Included photo gallery and blog. Administrator could manage photo gallery (add, delete, update images). Also he could add posts, delete and update them.
 location: Ryazan, Russia
 position: Developer
-startDate: '2016-8-01'
+date: 2016-08-01
 duties:
     - Develop UI for the whole project with ReactJS
     - Participate in code reviews

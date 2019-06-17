@@ -3,7 +3,7 @@ title: EPAM Systems Project 2
 description: Developed widgets using Polymer framework for a rich web-portal consisted of stock exchange market widgets
 location: Ryazan, Russia
 position: Key Developer
-startDate: '2017-02-01'
+date: 2017-02-01
 duties:
     - Write JavaScript unit-tests using Karma/Jasmine
     - Develop widgets using Polymer framework and D3.js for data visualization
