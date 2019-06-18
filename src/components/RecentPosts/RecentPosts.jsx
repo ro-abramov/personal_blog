@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { GridElement } from '../Grid'
-import { Card } from '../Card'
 import { Link } from '../Link'
 import * as atoms from './RecentPosts.atoms'
 
@@ -33,7 +32,7 @@ export function RecentPosts({ posts }) {
                     </GridElement>
                 )
             })}
-            <GridElement col="11 / span 2" row="6">
+            <GridElement col="11 / span 2" row="5">
                 <atoms.ReadMore type="accent" to="/page=1">
                     Learn more ->
                 </atoms.ReadMore>

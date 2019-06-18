@@ -33,7 +33,14 @@ const IndexPage = ({ data }) => {
                         time-management and other related stuff.
                     </atoms.ShortInfo>
                     <atoms.ShortInfoButtonsGroup>
-                        <Button>Contact me</Button>
+                        <Button
+                            as="a"
+                            href="mailto:r.o.abramov@gmail.com"
+                            target="__blank"
+                            rel="noreferrer noopener nofollow"
+                        >
+                            Drop me a message
+                        </Button>
                         <Link type="accent" to="/about">
                             Who am I?
                         </Link>

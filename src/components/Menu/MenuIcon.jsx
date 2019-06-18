@@ -26,13 +26,14 @@ export function MenuIcon({ color = colors.main, isOpened = false, style = {} }) 
             width="44"
             height="44"
             viewBox="0 0 44 44"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            as={a.svg}
             style={style}
+            fill={interpolatedColor}
         >
-            <a.rect width="40" height="6" rx="3" fill={interpolatedColor} transform={top} />
-            <a.rect width="40" height="6" rx="3" fill={interpolatedColor} transform={center} />
-            <a.rect width="40" height="6" rx="3" fill={interpolatedColor} transform={bottom} />
+            <a.rect width="40" height="6" rx="3" transform={top} />
+            <a.rect width="40" height="6" rx="3" transform={center} />
+            <a.rect width="40" height="6" rx="3" transform={bottom} />
         </atoms.MenuIconSvg>
     )
 }
