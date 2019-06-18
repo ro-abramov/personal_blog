@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { colors, breakpoints } from '../../../../utils/css/mixins'
+import { colors, breakpoints, centerContent } from '../../../../utils/css/mixins'
 
 export const BackGroundImageWrapper = styled.div`
     position: relative;
     height: 30rem;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     ${breakpoints.mobile} {
         height: 15rem;
@@ -38,4 +38,5 @@ export const BackGroundImagePicture = styled.div`
 
 export const BackGroundImageContainer = styled.div`
     color: #fff;
+    ${centerContent({ topMargin: 0 })}
 `

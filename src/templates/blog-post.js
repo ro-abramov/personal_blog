@@ -1,6 +1,7 @@
 import React from 'react'
-import { Layout } from '../components/Layout'
 import { graphql } from 'gatsby'
+
+import { Layout } from '../components/Layout'
 import { SEO } from '../components/seo'
 import { PostInfo } from '../components/Post'
 
@@ -15,6 +16,7 @@ const BlogPost = ({ data }) => {
                 timeToRead={post.timeToRead}
                 content={post.html}
                 img={post.frontmatter.cover.childImageSharp.fluid}
+                slug={post.fields.slug}
             />
         </Layout>
     )
@@ -36,6 +38,9 @@ export const query = graphql`
                         }
                     }
                 }
+            }
+            fields {
+                slug
             }
         }
     }

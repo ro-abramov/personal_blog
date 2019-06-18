@@ -1,8 +1,16 @@
 import React from 'react'
+import { DiscussionEmbed } from 'disqus-react'
+
 import * as atoms from './Post.atoms'
 import { BackGroundImage } from './components/BackGroundImage'
+import { CenterContent } from '../atoms'
 
-export function Post({ title, img, date, timeToRead, content }) {
+export function Post({ title, img, date, timeToRead, content, slug }) {
+    const disqusConfig = {
+        url: `https://roabramov.netlify.com${slug}`,
+        identifier: slug,
+        title: title,
+    }
     return (
         <>
             <BackGroundImage alt={title} fluid={img}>
@@ -12,9 +20,10 @@ export function Post({ title, img, date, timeToRead, content }) {
                     <atoms.PostInfo>{timeToRead} min read</atoms.PostInfo>
                 </atoms.PostInfoContainer>
             </BackGroundImage>
-            <atoms.PostContent>
-                <div dangerouslySetInnerHTML={{ __html: content }} />
-            </atoms.PostContent>
+            <CenterContent>
+                <atoms.PostContent dangerouslySetInnerHTML={{ __html: content }} />
+                <DiscussionEmbed shortname="roabramov" config={disqusConfig} />
+            </CenterContent>
         </>
     )
 }
