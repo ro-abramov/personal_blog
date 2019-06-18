@@ -8,7 +8,7 @@ export function Timeline() {
         allPastProjectsYaml: { edges: pastProjects },
     } = useStaticQuery(graphql`
         query {
-            allPastProjectsYaml(sort: { fields: [date] }) {
+            allPastProjectsYaml(sort: { fields: [date], order: DESC }) {
                 edges {
                     node {
                         id

@@ -9,12 +9,6 @@ const openedTransformationConfig = {
     bottom: 'translate(2, 31) rotate(0)',
 }
 
-// const inbetweenD = {
-//     top: 'translate(14, 20) rotate(-90)',
-//     center: 'translate(-14, 24) rotate(90)',
-//     bottom: 'translate(14, 20) rotate(-90)',
-// }
-
 const closedTransformationConfig = {
     top: 'translate(5, 32) rotate(-45)',
     center: 'translate(10, 4) rotate(45)',
@@ -23,8 +17,6 @@ const closedTransformationConfig = {
 
 export function MenuIcon({ color = colors.main, isOpened = false, style = {} }) {
     const { top, center, bottom, color: interpolatedColor } = useSpring({
-        // to: [{ ...inbetweenD, config: { ...config.stiff, duration: 100 } }, isOpened ? closeD : openD],
-        // from: openD,
         to: { ...(isOpened ? closedTransformationConfig : openedTransformationConfig), color },
         config: config.stiff,
     })
