@@ -3,6 +3,10 @@ import { graphql } from 'gatsby'
 import * as atoms from './Timeline.atoms'
 import { useStaticQuery } from 'gatsby'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCogs } from '@fortawesome/free-solid-svg-icons'
+import { colors } from '../../utils/css/mixins'
+
 export function Timeline() {
     const {
         allPastProjectsYaml: { edges: pastProjects },
@@ -18,7 +22,7 @@ export function Timeline() {
                         description
                         location
                         position
-                        date(formatString: "MM/DD/YYYY")
+                        date(formatString: "MMM, YYYY")
                         techStack
                     }
                 }
@@ -52,7 +56,9 @@ export function Timeline() {
                                     ))}
                             </atoms.TimelineInfoTechContainer>
                         </atoms.TimelineInfoBox>
-                        <atoms.TimelineIcon />
+                        <atoms.TimelineIcon>
+                            <FontAwesomeIcon icon={faCogs} color={colors.main} />
+                        </atoms.TimelineIcon>
                         <atoms.TimelineDate>{pastProject.date}</atoms.TimelineDate>
                     </atoms.TimelineElement>
                 )

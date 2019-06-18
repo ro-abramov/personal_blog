@@ -10,7 +10,7 @@ export const TimelineContainer = styled.ul`
         position: absolute;
         width: 0.4rem;
         left: calc(50% - 0.2rem);
-        background: linear-gradient(0deg, #bfffb4, #c4b4f7);
+        background: linear-gradient(0deg, ${colors.light}, ${colors.secondary});
         top: 0.5rem;
         height: calc(100% - 0.5rem);
         content: '';
@@ -28,7 +28,7 @@ export const TimelineInfoBox = styled.article`
     border-radius: 4px;
     padding: 1rem;
     position: relative;
-    box-shadow: ${cssConstants.boxShadowLarge};
+    box-shadow: ${cssConstants.boxShadow};
     ${breakpoints.mobile} {
         width: 100%;
     }
@@ -66,18 +66,17 @@ export const TimelineElement = styled.li`
 `
 
 export const TimelineIcon = styled.div`
-    width: 2.4rem;
-    height: 2.4rem;
-    border-radius: 50%;
     position: relative;
     top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
     margin: 0 2.8rem;
-    border: 2px solid hsl(266, 81%, 36%);
-    background-color: hsl(266, 62%, 55%);
-    background-image: url('/icons/project.svg');
-    background-size: 1.4rem auto;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background-color: ${colors.light};
+    border-radius: 50%;
+    box-shadow: ${cssConstants.boxShadowLarge};
     ${breakpoints.mobile} {
         margin: 0;
         flex-shrink: 0;
