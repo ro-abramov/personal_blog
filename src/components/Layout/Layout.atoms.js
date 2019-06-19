@@ -31,7 +31,6 @@ export const Main = styled.main`
 export const Footer = styled.footer`
     flex-shrink: 0;
     padding: 0.4rem;
-    padding-top: 140rem;
 `
 
 export const StyledLink = styled(Link)`
