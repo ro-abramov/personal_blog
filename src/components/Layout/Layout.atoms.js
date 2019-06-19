@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import styled, { createGlobalStyle } from 'styled-components'
 import { colors } from '../../utils/css/mixins'
+import { CenterContent } from '../atoms'
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -30,7 +31,16 @@ export const Main = styled.main`
 
 export const Footer = styled.footer`
     flex-shrink: 0;
-    padding: 0.4rem;
+    padding: 0.6rem 0;
+    font-size: 0.7rem;
+    color: ${colors.secondary};
+    background-color: ${colors.fullDark};
+`
+
+export const FooterContent = styled(CenterContent)`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `
 
 export const StyledLink = styled(Link)`

@@ -1,4 +1,5 @@
 import React from 'react'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import { GridElement } from '../Grid'
 import { Link } from '../Link'
@@ -34,7 +35,7 @@ export function RecentPosts({ posts }) {
             })}
             <GridElement col="11 / span 2" row="5">
                 <atoms.ReadMore type="accent" to="/page=1">
-                    Learn more ->
+                    <span>Read more</span> <atoms.ReadMoreIcon icon={faArrowRight} />
                 </atoms.ReadMore>
             </GridElement>
         </>
