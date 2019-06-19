@@ -1,67 +1,68 @@
 {
-  "name": "ro_abramov_blog",
-  "private": true,
-  "description": "Personal blog of Ruslan Abramov, build with gatsby",
-  "version": "0.1.0",
-  "author": "Ruslan Abramov <r.o.abramov@gmail.com>",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
-    "@fortawesome/free-solid-svg-icons": "^5.9.0",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "babel-plugin-styled-components": "^1.10.0",
-    "date-fns": "^1.30.1",
-    "disqus-react": "^1.0.5",
-    "gatsby": "^2.8.5",
-    "gatsby-cli": "^2.6.5",
-    "gatsby-image": "^2.1.2",
-    "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-offline": "^2.1.1",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sharp": "^2.1.3",
-    "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-plugin-typography": "^2.2.13",
-    "gatsby-remark-images": "^3.0.14",
-    "gatsby-remark-prismjs": "^3.2.9",
-    "gatsby-source-filesystem": "^2.0.33",
-    "gatsby-transformer-remark": "^2.3.12",
-    "gatsby-transformer-sharp": "^2.1.19",
-    "gatsby-transformer-yaml": "^2.1.12",
-    "prismjs": "^1.16.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "react-spring": "^8.0.25",
-    "react-typography": "^0.16.19",
-    "styled-components": "^4.2.0",
-    "typography": "^0.16.19",
-    "typography-theme-funston": "^0.16.19"
-  },
-  "devDependencies": {
-    "chalk": "^2.4.2",
-    "eslint-config-react-app": "^4.0.1",
-    "eslint-plugin-react-hooks": "^1.6.0",
-    "prettier": "^1.17.0"
-  },
-  "keywords": [
-    "gatsby",
-    "blog",
-    "personal"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/snak1t/personal_blog"
-  },
-  "bugs": {
-    "url": "https://github.com/snak1t/personal_blog/issues"
-  }
+    "name": "ro_abramov_blog",
+    "private": true,
+    "description": "Personal blog of Ruslan Abramov, build with gatsby",
+    "version": "0.1.0",
+    "author": "Ruslan Abramov <r.o.abramov@gmail.com>",
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.19",
+        "@fortawesome/free-solid-svg-icons": "^5.9.0",
+        "@fortawesome/react-fontawesome": "^0.1.4",
+        "@fortawesome/fontawesome-free-brands": "5.0.13",
+        "babel-plugin-styled-components": "^1.10.0",
+        "date-fns": "^1.30.1",
+        "disqus-react": "^1.0.5",
+        "gatsby": "^2.8.5",
+        "gatsby-cli": "^2.6.5",
+        "gatsby-image": "^2.1.2",
+        "gatsby-plugin-manifest": "^2.1.1",
+        "gatsby-plugin-offline": "^2.1.1",
+        "gatsby-plugin-react-helmet": "^3.0.12",
+        "gatsby-plugin-sharp": "^2.1.3",
+        "gatsby-plugin-styled-components": "^3.0.7",
+        "gatsby-plugin-typography": "^2.2.13",
+        "gatsby-remark-images": "^3.0.14",
+        "gatsby-remark-prismjs": "^3.2.9",
+        "gatsby-source-filesystem": "^2.0.33",
+        "gatsby-transformer-remark": "^2.3.12",
+        "gatsby-transformer-sharp": "^2.1.19",
+        "gatsby-transformer-yaml": "^2.1.12",
+        "prismjs": "^1.16.0",
+        "prop-types": "^15.7.2",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-helmet": "^5.2.1",
+        "react-spring": "^8.0.25",
+        "react-typography": "^0.16.19",
+        "styled-components": "^4.2.0",
+        "typography": "^0.16.19",
+        "typography-theme-funston": "^0.16.19"
+    },
+    "devDependencies": {
+        "chalk": "^2.4.2",
+        "eslint-config-react-app": "^4.0.1",
+        "eslint-plugin-react-hooks": "^1.6.0",
+        "prettier": "^1.17.0"
+    },
+    "keywords": [
+        "gatsby",
+        "blog",
+        "personal"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write src/**/*.{js,jsx}",
+        "start": "npm run develop",
+        "serve": "gatsby serve",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/snak1t/personal_blog"
+    },
+    "bugs": {
+        "url": "https://github.com/snak1t/personal_blog/issues"
+    }
 }

@@ -8,7 +8,7 @@ import { PostInfo } from '../components/Post'
 const BlogPost = ({ data }) => {
     const { markdownRemark: post } = data
     return (
-        <Layout>
+        <Layout hideStickyContact>
             <SEO title={post.frontmatter.title} />
             <PostInfo
                 title={post.frontmatter.title}
