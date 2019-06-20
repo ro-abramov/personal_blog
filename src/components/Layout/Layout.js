@@ -20,7 +20,7 @@ export function Layout({ children, isMainPage = false, hideStickyContact = false
                         <span>© Ruslan Abramov, {new Date().getFullYear()}</span>
                         <Contacts />
                         <span>
-                            <span>Found an issues? </span>
+                            <span>Found an issue? </span>
                             <a
                                 href="https://github.com/snak1t/personal_blog/issues/new"
                                 target="__blank"

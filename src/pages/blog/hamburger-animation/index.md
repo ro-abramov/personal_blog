@@ -18,28 +18,28 @@ We are going to operate directly with svg elements, so we need appropriate ones.
 A "hamburger" (open) icon.
 
 ```html
-<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="40" height="6" rx="3" fill="#000" transform="translate(2, 7) rotate(0)" />
-    <rect width="40" height="6" rx="3" fill="#000" transform="translate(2, 19) rotate(0)" />
-    <rect width="40" height="6" rx="3" fill="#000" transform="translate(2, 31) rotate(0)" />
+<svg width="44" height="44" viewBox="0 0 44 44" fill="#000" xmlns="http://www.w3.org/2000/svg">
+    <rect width="40" height="6" rx="3" transform="translate(2, 7) rotate(0)" />
+    <rect width="40" height="6" rx="3" transform="translate(2, 19) rotate(0)" />
+    <rect width="40" height="6" rx="3" transform="translate(2, 31) rotate(0)" />
 </svg>
 ```
 
 And a closed one (cross)
 
 ```html
-<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="40" height="6" rx="3" fill="#000" transform="translate(5, 32) rotate(-45)" />
-    <rect width="40" height="6" rx="3" fill="#000" transform="translate(10, 4) rotate(45)" />
-    <rect width="40" height="6" rx="3" fill="#000" transform="translate(5, 32) rotate(-45)" />
+<svg width="44" height="44" viewBox="0 0 44 44" fill="#000" xmlns="http://www.w3.org/2000/svg">
+    <rect width="40" height="6" rx="3" transform="translate(5, 32) rotate(-45)" />
+    <rect width="40" height="6" rx="3" transform="translate(10, 4) rotate(45)" />
+    <rect width="40" height="6" rx="3" transform="translate(5, 32) rotate(-45)" />
 </svg>
 ```
 
-As you may notice, they differ only in transform property. And this is exactly what we need as we are going to animate this property. We also could use `path` element instead of `rect`, but in this case it we need to use an additional library for path interpolation, as, afaik, `react-spring` can't interpolate path values out-of-the-box.
+As you may notice, they differ only in transform property. And this is exactly what we need as we are going to animate this property. We also could use `path` element instead of `rect`, but to do so we have to use an additional library for path interpolation, as, afaik, `react-spring` can't interpolate path values out-of-the-box.
 
 > If you are interested in how I create the icons, then in the end of the post in bonus sections, I describe the whole process.
 
-## Create a MenuIcon component
+## Creating a MenuIcon component
 
 We have two icons, so it is high time to create a React component. I'd like to create a stateless component that accepts a prop `isOpened` that will indicate whether we should render a "hamburger" or a cross.
 
@@ -65,10 +65,10 @@ And the component itself
 export function MenuIcon({ isOpened }) {
     const selectedConfig = isOpened ? openedTransformationConfig : closedTransformationConfig
     return (
-        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="40" height="6" rx="3" fill="#000" transform={selectedConfig.top} />
-            <rect width="40" height="6" rx="3" fill="#000" transform={selectedConfig.center} />
-            <rect width="40" height="6" rx="3" fill="#000" transform={selectedConfig.bottom} />
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="#000" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="6" rx="3" transform={selectedConfig.top} />
+            <rect width="40" height="6" rx="3" transform={selectedConfig.center} />
+            <rect width="40" height="6" rx="3" transform={selectedConfig.bottom} />
         </svg>
     )
 }
@@ -84,15 +84,7 @@ I'm happy that you strive to polish even small ui elements. So lets add some ani
 yarn add react-spring
 ```
 
-In out component we would use simple [Spring](https://www.react-spring.io/docs/hooks/use-spring). Why? Lets break it down.
-
-??
-
-1.  We need the transition for a single element between two states.
-2.  The component is already mounted. No need for enter/leave animations. In `react-spring` this could be achieved by using Transition animation primitive.
-    ??
-
-I've already mentioned that we need to make transition between two state, and `useSpring` accepts two property `from` and `to`. Great, that is what we need. Well, actually, you could use both fields, but for lots of cases we could stick with only `to` field. In other words, it is like we are skipping the first animation. The same effect could be achieved by setting same values for initial `from` and `to`, and in future we should manage both fields in sync.
+I've already mentioned that we need to make transition between two state. To do so we would use a [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) hook, that accepts two property `from` and `to`. Well, actually, you could use both fields, but for lots of cases we could stick with only `to` field. In other words, it is like we are skipping the first animation. The same effect could be achieved by setting same values for initial `from` and `to`, and in future we should manage both fields in sync.
 
 ```javascript
 const { top, center, bottom } = useSpring({
@@ -104,9 +96,9 @@ Here we are conditionally setting config for `to` state. Lets break it down.
 
 1.  By default `isOpened = false`, so the the config for 'hamburger' is set to `to` state. The animation is skipped as `from` field is missing.
 
-2.  We change `isOpened = true`. Now `closedTransformationConfig` is set to `to` property. And react spring is going to figure out how to transition from previous state ('hamburger') to received one ('cross'). The process is called interpolation.
+2.  We set `isOpened = true`. Now `closedTransformationConfig` is set to `to` property. And react spring is going to figure out how to transition from previous state ('hamburger') to received one ('cross'). The process is called interpolation.
 
-3.  `isOpened = false`. Same process as in second point but in opposite direction. Simle, isn't it?
+3.  `isOpened = false`. Same process as in second point but for opposite direction. Simle, isn't it?
 
 Now we should somehow use the return values from `useSpring` hook.
 
@@ -119,16 +111,57 @@ export function MenuIcon({ isOpened }) {
         config: config.stiff,
     })
     return (
-        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <animated.rect width="40" height="6" rx="3" fill="#000" transform={top} />
-            <animated.rect width="40" height="6" rx="3" fill="#000" transform={center} />
-            <animated.rect width="40" height="6" rx="3" fill="#000" transform={bottom} />
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="#000" xmlns="http://www.w3.org/2000/svg">
+            <animated.rect width="40" height="6" rx="3" transform={top} />
+            <animated.rect width="40" height="6" rx="3" transform={center} />
+            <animated.rect width="40" height="6" rx="3" transform={bottom} />
         </svg>
     )
 }
 ```
 
 > Here I also change the config property. I prefer to use faster animation for simple UI elements.
+
+What is `animated.rect`? `react-spring` export a special component that knows how to handle interpolated values (plus some perf tricks). So if you want to pass animation property to `div` element, than use `animated.div`, `span` - `animated.span` and so on and so forth.
+
+Lets recap what we've done so far. We have a component that is able to show two states, and animate transition between them. Next step will be easy enough, we would also add color animation.
+
+## Color animation
+
+`react-spring` is able to interpolate almost all values. With that in mind, we need to add color properties to out config files, and pass interpolated color to animated component. I hope that is should be obvious so this is whole code with changes.
+
+```javascript
+import { animated, useSpring, config } from 'react-spring'
+
+const openedTransformationConfig = {
+    top: 'translate(2, 7) rotate(0)',
+    center: 'translate(2, 19) rotate(0)',
+    bottom: 'translate(2, 31) rotate(0)',
+    color: '#ff0000', // Add color
+}
+
+const closedTransformationConfig = {
+    top: 'translate(5, 32) rotate(-45)',
+    center: 'translate(10, 4) rotate(45)',
+    bottom: 'translate(5, 32) rotate(-45)',
+    color: '#0000ff', // Add color
+}
+
+export function MenuIcon({ isOpened }) {
+    const { top, center, bottom, color } = useSpring({
+        to: isOpened ? closedTransformationConfig : openedTransformationConfig,
+        config: config.stiff,
+    })
+    return (
+        {/* Change svg to animated.svg, pass interpolated color as prop */}
+        <animated.svg width="44" height="44" viewBox="0 0 44 44" fill={color} xmlns="http://www.w3.org/2000/svg">
+            <animated.rect width="40" height="6" rx="3" transform={top} />
+            <animated.rect width="40" height="6" rx="3" transform={center} />
+            <animated.rect width="40" height="6" rx="3" transform={bottom} />
+        </animated.svg>
+    )
+}
+```
 
 <!--
 

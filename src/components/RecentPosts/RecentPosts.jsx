@@ -35,7 +35,7 @@ export function RecentPosts({ posts }) {
             })}
             <GridElement col="11 / span 2" row="5">
                 <atoms.ReadMore type="accent" to="/page=1">
-                    <span>Read more</span> <atoms.ReadMoreIcon icon={faArrowRight} />
+                    <span>Read more ...</span>
                 </atoms.ReadMore>
             </GridElement>
         </>
