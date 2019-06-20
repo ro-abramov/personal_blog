@@ -14,8 +14,10 @@ const ShareIcon = styled(FontAwesomeIcon)`
     color: ${colors.main};
     font-size: 1rem;
 `
-let url = document.location.href
-const canonicalElement = document ? document.querySelector('link[rel=canonical]') : 'https://roabramov.com'
+let url = window.document ? window.document.location.href : ''
+const canonicalElement = window.document
+    ? window.document.querySelector('link[rel=canonical]')
+    : 'https://roabramov.com'
 if (canonicalElement !== null) {
     url = canonicalElement.href
 }
