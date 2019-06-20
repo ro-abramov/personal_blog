@@ -5,10 +5,10 @@
     "version": "0.1.0",
     "author": "Ruslan Abramov <r.o.abramov@gmail.com>",
     "dependencies": {
+        "@fortawesome/fontawesome-free-brands": "5.0.13",
         "@fortawesome/fontawesome-svg-core": "^1.2.19",
         "@fortawesome/free-solid-svg-icons": "^5.9.0",
         "@fortawesome/react-fontawesome": "^0.1.4",
-        "@fortawesome/fontawesome-free-brands": "5.0.13",
         "babel-plugin-styled-components": "^1.10.0",
         "date-fns": "^1.30.1",
         "disqus-react": "^1.0.5",
@@ -27,6 +27,7 @@
         "gatsby-transformer-remark": "^2.3.12",
         "gatsby-transformer-sharp": "^2.1.19",
         "gatsby-transformer-yaml": "^2.1.12",
+        "polished": "^3.4.1",
         "prismjs": "^1.16.0",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
@@ -34,7 +35,7 @@
         "react-helmet": "^5.2.1",
         "react-spring": "^8.0.25",
         "react-typography": "^0.16.19",
-        "styled-components": "^4.2.0",
+        "styled-components": "^5.0.0-beta.3",
         "typography": "^0.16.19",
         "typography-theme-funston": "^0.16.19"
     },

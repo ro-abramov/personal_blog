@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, breakpoints } from '../../utils/css/mixins'
+import { colors, breakpoints, calculateColorDifference } from '../../utils/css/mixins'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const ContactsShortContainer = styled.section`
@@ -9,7 +9,7 @@ export const ContactsShortContainer = styled.section`
     font-size: 0.8rem;
     z-index: 1;
     mix-blend-mode: difference;
-    color: rgb(217, 212, 196);
+    color: ${calculateColorDifference(colors.fullDark, colors.light)};
     ${breakpoints.mobile} {
         left: 0.1rem;
         font-size: 0.6rem;

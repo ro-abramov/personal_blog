@@ -1,5 +1,4 @@
 import React from 'react'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import { GridElement } from '../Grid'
 import { Link } from '../Link'

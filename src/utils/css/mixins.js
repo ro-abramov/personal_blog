@@ -1,3 +1,15 @@
+import { parseToRgb, toColorString } from 'polished'
+export const calculateColorDifference = (color1, color2) => {
+    const color1Rgb = parseToRgb(color1)
+    const color2Rgb = parseToRgb(color2)
+    const colorDifference = {
+        red: Math.abs(color1Rgb.red - color2Rgb.red),
+        green: Math.abs(color1Rgb.green - color2Rgb.green),
+        blue: Math.abs(color1Rgb.blue - color2Rgb.blue),
+    }
+    return toColorString(colorDifference)
+}
+
 export const centerContent = ({ topMargin = 1 } = {}) => {
     return `
     max-width: 60rem;
