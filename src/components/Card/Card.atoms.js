@@ -16,6 +16,7 @@ export const CardDescription = styled.p`
 export const CardFooter = styled.footer`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: inherit;
     font-size: 0.7rem;
     width: 100%;

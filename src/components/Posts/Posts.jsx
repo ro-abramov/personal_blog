@@ -1,6 +1,7 @@
 import React from 'react'
 import * as atoms from './Posts.atoms'
 import { Card } from '../Card/Card'
+import { ShareButton } from '../ShareButton'
 
 export const Posts = ({ posts }) => {
     return (
@@ -26,6 +27,7 @@ export const Posts = ({ posts }) => {
                                         </span>
                                         {node.timeToRead} min read
                                     </atoms.PostInfo>
+                                    <ShareButton slug={node.fields.slug} title={node.frontmatter.title} />
                                 </>
                             )}
                         />
