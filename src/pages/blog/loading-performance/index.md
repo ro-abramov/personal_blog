@@ -5,17 +5,15 @@ cover: ./cover.jpg
 coverImageOrientation: 'horizontal'
 ---
 
-## 🚀 Brief intro
-
 It shouldn't be a secret that modern web apps are supposed to load in a thousand of a second, and work as smooth as native app. Tools for finding application bottlenecks are created for developers. For instance, in Google Chrome there are really awesome tools for auditing application performance, and other vendors also try not to fall behind (probably). React team has made some improvements in its devtool extension, and has added a new profiler. If you haven't tried it yet, then you definitely should at least read a [blog post](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html).
 
-Помимо этого в сети каждую минуту появляются статьи и советы как правильно улучшать производительность (как например и эта статья). Одним из корифеев можно считать Addie Osmani. У него есть целый цикл статей о том как надо и как не надо делать приложения. И вообще, советую ознакомиться с его [блогом](https://medium.com/@addyosmani) на medium чтобы стать настоящим 🧙‍ в данном вопросе.
+Addie Osmani is the master of performance optimizations. He has lots of must-read resources about how not to ruin your performance. I insist on adding his [blog](https://medium.com/@addyosmani) to bookmarks in order to becoming a real 🧙‍ of speed.
 
-In the article I'll try to give some practical advice with an easy explanation of what should be used and in what situation.
+In the article I'll try to give some practical advice with an easy explanation of some tips.
 
 ## 👨‍💻 Preloading
 
-Итак, начать хотелось бы с такой темы как предзагрузка данных. Давайте вначале рассмотрим гипотетическую проблемму а потом попытаемся сформировать решение. Допустим у нас есть простейшая страница.
+Let me start with data preloading. Imagine that we have a following issue and then try to find a good solution. So we have the following page.
 
 ```html
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
@@ -23,7 +21,7 @@ In the article I'll try to give some practical advice with an easy explanation o
 <link rel="stylesheet" href="/styles/main.css" />
 ```
 
-В файле стилей `main.css` мы загружаем дополнительный кастомный шрифт.
+And in file `main.css` we try to load custom font.
 
 ```css
 @font-face {
@@ -34,21 +32,21 @@ In the article I'll try to give some practical advice with an easy explanation o
 }
 ```
 
-> Важно: В примере мы загружаем шрифт формата ttf. Первой оптимизацией загрузки в данном случае было бы использовать стандартный шрифт, а если дизайнер настаивает что проклянет тебя - то хотябы постараться подключить формата woff/woff2 [link](https://transfonter.org/formats). Truetype же в примере выше используется лишь чтобы грузилось подольше и можно было бы ярче подсветить проблему.
+> Important: In the example we load file in ttf extension for purpose. The first step to optimize performance should be using standard font, and if the UX engineer insist on using custom font - then you must use modern file formats, like woff/woff2 [link](https://transfonter.org/formats). I've used Truetype font in order to increase the loading time.
 
-В консоле браузера открываем вкладку Network и перезагружаем страницу.
+Open network tab in browser console and reload the page.
 
-![Before preloading](/img/performance_blog/fonts_before.png)
+![Before preloading](./fonts_before.png)
 
-Итак, чтоже мы с вами видим. Вначале у нас скачиваются наши файлы стилей и скриптов, а только потом уже скачиваются шрифты. Обратите внимание, что браузер начинает скачивать шрифты только в тот момент, когда они действительно применяются к элементу. Что приводит к тому что текст какое-то время вообще не отображается.
+So what we may notice here. At first the browser downloads styles and scripts, and only after this - font files. Please notice that browser starts downloading font files only after the font _actually_ applies to element. For a short period of time the text hasn't displayed at all.
 
-Таким образом мы видим, что готовый текст появляется где-то на 8 секунде, а текст с примененным шрифтом на 9 секунде. (Подробнее про применение шрифтов будет рассказано чуть позже).
+The text with default font appears only after 8 second after initial request, and with custom font only after 9 second. (I am going to speak in detail about fonts application later in this post).
 
-Возникает вопрос, а можно ли каким то образом заставить браузер грузить шрифт заранее, но дожидаясь "реального" применения.
+So could we somehow tell browser to load the font file in advance? Without waiting for actual application.
 
-В этом нам как раз и поможет предзагрузка данных. Нам необходимо выполнить несколько простых шагов.
+Preloading is going to help in that situation. We should implement several easy steps.
 
-Шаг первый. Добавить линку на ресурс с типом preload в html
+Step 1. Add link to resource with preload attribute in html document.
 
 ```html
 <!-- Предзагрузка -->
@@ -68,9 +66,9 @@ In the article I'll try to give some practical advice with an easy explanation o
 <link rel="stylesheet" href="/styles/main.css" />
 ```
 
-Шаг второй. Открываем 🍻 и наслаждаемся полученным результатом.
+Step two. Grab some 🍻 and enjoy.
 
-![After preloading](/img/performance_blog/fonts_after.png)
+![After preloading](./fonts_after.png)
 
 При прочих равных условия мы можем наблюдать, что теперь шрифты загружаются сразу вместе с другими ресурсами. И уже на 7 секунде мы получаем уже готовую отрисованную страницу. Наш выигрыш составил 1 секунду. Секунду, Кард, мы сумели выиграть таким простым хаком. Но если все так просто, то давайте предзагружать все ресурсы сразу.
 
@@ -113,7 +111,7 @@ document.getElementById('btn').addEventListener('click', () => {
 
 В результате мы получаем:
 
-<!-- ![prefetch_before](/img/performance_blog/prefetch_before.gif) -->
+![prefetch_before](./prefetch_before.gif)
 
 Обратите внимание, что загрузка изображения начинается только при нажатии на кнопку. Но что если изображение слишком большое, а интернет соединение не самое стабильное. В таком случае изображение будет отрисовываться постепенно, а это 💩 а не good user experience. На помощь нам придёт prefetch.
 
@@ -133,7 +131,7 @@ Prefetch - это своего вида декларативный запрос,
 </dialog>
 ```
 
-![prefetch_after](/img/performance_blog/prefetch_after.gif)
+![prefetch_after](./prefetch_after.gif)
 
 Обратите внимание, что картинка начинает загружаться до того как пользователь нажал на кнопку, а уже при открытии диалового окна - файл загружается из кэша.
 
@@ -152,7 +150,7 @@ Prefetch - это своего вида декларативный запрос,
 
 По-умолчания браузер не показывает текст, пока кастомный шрифт не подгрузится, оставляя пользователя в ожидании получения осмысленной текстовой информации.
 
-![Flash of Invisible Text](/img/performance_blog/font_block.gif) _Этот "эффект" получил название Flash of Invisible Text (вспышка невидимого текста) или сокращенно FOIT._
+![Flash of Invisible Text](./font_block.gif) _Этот "эффект" получил название Flash of Invisible Text (вспышка невидимого текста) или сокращенно FOIT._
 
 На нашем тестовом сайте вымышленному пользователю пришлось бы подождать 1.5 секунды прежде чем прочитать увлекательный латинский псевдотекст. Этот режим получил название block.
 
@@ -160,7 +158,7 @@ Prefetch - это своего вида декларативный запрос,
 
 Если мы все же хотим дать возможность пользователю начать читать текст не дожидаясь загрузки шрифта, то мы можем выставить в значение swap. Говоря другими словами, пусть вначале отрисуется следующий в списке семейства шрифтов, который уже установлен в системе, и который не надо дополнительно скачивать, а когда загрузится кастомный шрифт, то мы просто перерисуем текст с новым шрифтом.
 
-![Flash of Unstyled Text](/img/performance_blog/font_swap.gif) _Этот "эффект" получил название Flash of Unstyled Text (вспышка невидимого текста) или сокращенно FOUT._
+![Flash of Unstyled Text](./font_swap.gif) _Этот "эффект" получил название Flash of Unstyled Text (вспышка невидимого текста) или сокращенно FOUT._
 
 И собственно что нам надо указать в файле стилей
 
@@ -188,23 +186,23 @@ Prefetch - это своего вида декларативный запрос,
 }
 ```
 
-И собственно как это выглядит в браузере
+This is how it now looks in network panel
 
-![Font-display fallback](/img/performance_blog/font_fallback.gif)
+![Font-display fallback](./font_fallback.gif)
 
 Как вы можете наблюдать браузер вначале ничего не рисует на протяжение короткого периода времени, как в примере со свойством block, затем алгоритм следующий - если шрифт скачался и доступен то используем его, если нет - то используем дефолтный шрифт и ждем в течении 3 секунд пока подгрузится кастомный и затем как в примере со swap заменяем шрифты. Если на протяжении 3 секунд шрифт так и не подгрузился, то прекращаем ждать и используем fallback шрифт.
 
-Ну и наконец последнее свойство - optional
+And finally the latest option is optional
 
-![Font-display optional](/img/performance_blog/font_optional.gif)
+![Font-display optional](./font_optional.gif)
 
-Здесь уже все проще. Мы говорим браузеру - дай нам маленькое окошко по времени, если я успею загрузить шрифт то сразу его и используй, а коли нет - ну так и рисуй всегда fallback - значит такова судьба.
+This is the easiest case, I think. We tell browser to give us super narrow time window, and if we have enough time to load the font then display it immediately, and if no - then use fallback font.
 
 У каждого из этих вариантов есть свои плюсы и минусы. Надо смотреть и от конкретной цели выбирать средство. К примеру, если шрифт меняется очень быстро - то создается эффект мерцания, если показывать fallback шрифт и дать пользователю возможность зацепиться за текст и потом подменять шрифт - то создается когнитивная нагрузка. Вообщем здесь есть только одна рекомендация - стараться подобрать fallback шрифт максимально похожим на кастомный, а все остальное уже зависит от конкретных целей.
 
-## Бонус 🙀
+## Bonus 🙀
 
-Придумаем реальную задачу. Есть проект на React или даже на Vue, в котором реализованы несколько страниц. У нас есть требование разбить все скрипты на постраничные чанки и подгружать их по мере необходимости, по запросу. Также мы знаем что со страницы А на страницу Б пользователь перейдет в 99% случаев. Отличное время чтобы использовать prefetch данных. Но... проект собирается с помощью webpack, и куда же надо вставлять `<link type="prefetch">`? Ответ: webpack предоставляет готовый api 🤗
+Lets image a real task. We have a React or Vue project. And in that project we'd like to create several pages, and we'd also like to split the whole code into chunks based on pages, and load them when needed. We also learn that from page A to page B user is going to go in 99% of chances. It is high time to prefetch the chunk, but... The whole project is bundling with webpack, so where should we place `<link type="prefetch">`? Answer: webpack has such api out-of-the-box 🤗
 
 ```js
 import(
@@ -213,10 +211,10 @@ import(
 ).then(({default}) => apply(default))
 ```
 
-[Документация](https://webpack.js.org/guides/code-splitting/#prefetching-preloading-modules)
+[Documentation](https://webpack.js.org/guides/code-splitting/#prefetching-preloading-modules)
 
-В Терминологии webpack это называется magic comments. И как написано в документации мы можем устанавливать и preload и prefetch таким образом.
+In webpack terminology this is called magic comments and we are able to use both preload and prefetch strategies that way.
 
-## Бонус номер two
+## One more bonus
 
-Я коснулся лишь мизерной части того как повысить перформанс загрузки приложения. Это целая наука. А если ваша цель просто создать быстрый сайт и вы не хотите вдаваться в такие глубокие детали - то попробуйте [Gatsby](https://www.gatsbyjs.org/). В нем большинство функционала идет из коробки. И вообще всем мира и добра, реакта и гэтсби! ✌️
+I've touched only the smallest part about loading performance. This is the whole science. And if your case is only to create a fast web site without all that rocket science than give a try to [Gatsby](https://www.gatsbyjs.org/). It has lots of functionality out-of-the-box and it really some perf magic. Piece & love, react & gatsby to every one of you! ✌️

@@ -38,3 +38,14 @@ p > pre[class*='language-'] {
 blockquote {
     border-left: 0.2625rem solid #8345d3;
 }
+
+p > img {
+    display: block;
+    margin: 0 auto;
+}
+
+p > img + em {
+    font-size: 0.8rem;
+    text-align: center;
+    display: block;
+}
