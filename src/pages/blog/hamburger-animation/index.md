@@ -5,11 +5,11 @@ cover: ./cover.jpg
 coverImageOrientation: 'horizontal'
 ---
 
-Through my career as web dev, I've created tons of custom "hamburger" menu with different animations. Working on my blog I realize that it maybe a good idea to write down how I tackle the task using React and awesome react animation library [react-spring](https://www.react-spring.io/).
+Through my career as web dev, I've created tons of custom "hamburger" menu icons/buttons with different animations. Working on my blog I realize that it maybe a good idea to write down how I tackle the task using React and awesome react animation library [react-spring](https://www.react-spring.io/).
 
 But why react-spring? Well, It is smooth, easy to use, and constantly evolving animation library for react. It uses spring based animation, and instead of using duration/Bézier curves, we operate with tension and friction of a spring (opt-in support for duration is available also).
 
-But enough, just show me the code.
+Lets jump right in the code.
 
 ## Prepare svg icons
 
@@ -36,8 +36,6 @@ And a closed one (cross)
 ```
 
 As you may notice, they differ only in transform property. And this is exactly what we need as we are going to animate this property. We also could use `path` element instead of `rect`, but to do so we have to use an additional library for path interpolation, as, afaik, `react-spring` can't interpolate path values out-of-the-box.
-
-> If you are interested in how I create the icons, then in the end of the post in bonus sections, I describe the whole process.
 
 ## Creating a MenuIcon component
 
@@ -84,7 +82,7 @@ I'm happy that you strive to polish even small ui elements. So lets add some ani
 yarn add react-spring
 ```
 
-I've already mentioned that we need to make transition between two state. To do so we would use a [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) hook, that accepts two property `from` and `to`. Well, actually, you could use both fields, but for lots of cases we could stick with only `to` field. In other words, it is like we are skipping the first animation. The same effect could be achieved by setting same values for initial `from` and `to`, and in future we should manage both fields in sync.
+I've already mentioned that we need to make transition between two state. To do so we would use a [`useSpring`](https://www.react-spring.io/docs/hooks/use-spring) hook, that accepts two property `from` and `to`. Well, actually, you could use both fields, but for lots of cases we could stick with only `to` field. In other words, skipping `to` prop is like skipping the first animation. The same effect could be achieved by setting same values for initial `from` and `to`, and in future we should manage both fields in sync.
 
 ```javascript
 const { top, center, bottom } = useSpring({
@@ -128,7 +126,7 @@ Lets recap what we've done so far. We have a component that is able to show two 
 
 ## Color animation
 
-`react-spring` is able to interpolate almost all values. With that in mind, we need to add color properties to out config files, and pass interpolated color to animated component. I hope that is should be obvious so this is whole code with changes.
+`react-spring` is able to interpolate almost all values. With that in mind, we need to add color properties to out config files, and pass interpolated color to animated component. I hope that it should be obvious so this is whole code with changes.
 
 ```javascript
 import { animated, useSpring, config } from 'react-spring'
@@ -162,6 +160,10 @@ export function MenuIcon({ isOpened }) {
     )
 }
 ```
+
+## Final thoughts
+
+Animating elements with React may not be an easy task if you just start with it. That why I'd like to start with simple animation. I prefer to use `react-spring` for mentioned reasons. Also I'd like to mention that `react-spring` is constantly evolving project, it was one the first library to add hooks api in stable channel.
 
 <!--
 
