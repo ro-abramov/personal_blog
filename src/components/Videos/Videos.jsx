@@ -1,7 +1,7 @@
 import React from 'react'
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 import { GridElement } from '../Grid'
-import { SectionTitle } from '../atoms'
+import { SectionTitle } from '../SectionTitle'
 import * as atoms from './Videos.atoms'
 
 const getImageUrl = id => `https://img.youtube.com/vi/${id}/mqdefault.jpg`

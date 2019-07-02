@@ -5,12 +5,13 @@ location: Ryazan, Russia
 position: Developer
 date: 2016-08-01
 duties:
-    - Develop UI for the whole project with ReactJS
+    - Develop UI for the whole project with React
     - Participate in code reviews
     - Create and improve unit-tests with Jasmine - increase code coverage up to 80%
 techStack:
-    - ReactJS
+    - React
     - SASS
     - Bootstrap
-    - express
+    - Express
     - mysql
+    - Node

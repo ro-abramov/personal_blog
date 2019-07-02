@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { cssConstants, colors, centerContent, breakpoints } from '../../utils/css/mixins'
+import { cssConstants, colors, breakpoints } from '../../utils/css/mixins'
+import { CenterContent } from '../CenterContent'
 
 export const ProfileContainer = styled.section`
     background-color: ${colors.fullDark};
-    padding: 2rem 1rem 3rem;
+    padding: 2rem 0 3rem;
     color: ${colors.light};
     &:after {
         content: '';
@@ -12,8 +13,8 @@ export const ProfileContainer = styled.section`
     }
 `
 
-export const ProfileWrapper = styled.div`
-    ${centerContent({ topMargin: 0 })}
+export const ProfileWrapper = styled(CenterContent)`
+    margin: 0 auto;
 `
 
 export const ProfilePictureContainer = styled.div`

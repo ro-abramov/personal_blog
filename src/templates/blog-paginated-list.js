@@ -5,8 +5,9 @@ import { Layout } from '../components/Layout'
 import { SEO } from '../components/seo'
 import { Posts } from '../components/Posts'
 import { Pagination } from '../components/Pagination'
-import { CenterContent, SectionTitle } from '../components/atoms/index'
+import { CenterContent } from '../components/CenterContent'
 import { Profile } from '../components/Profile'
+import { SectionTitle } from '../components/SectionTitle'
 
 export default ({ data }) => (
     <Layout>

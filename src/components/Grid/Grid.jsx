@@ -1,17 +1,17 @@
 import styled from 'styled-components'
-import { centerContent, breakpoints } from '../../utils/css/mixins'
+import { breakpoints } from '../../utils/css/mixins'
+import { CenterContent } from '../CenterContent'
 
-export const Grid = styled.div`
+export const Grid = styled(CenterContent)`
     display: grid;
     grid-template-columns: ${({ columns = `repeat(12, 1fr)` }) => columns};
     grid-auto-rows: ${({ rows = `minmax(5rem, max-content)` }) => rows};
     grid-gap: ${({ gap = `1rem` }) => gap};
-    ${centerContent({ topMargin: 2 })};
+    margin: 2rem auto;
 
     ${breakpoints.mobile} {
         display: flex;
         flex-direction: column;
-        padding: 0 1rem;
     }
 `
 

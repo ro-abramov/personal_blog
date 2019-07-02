@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, breakpoints, centerContent } from '../../utils/css/mixins'
+import { colors, breakpoints } from '../../utils/css/mixins'
 
 export const PostTitle = styled.h1`
     font-size: 2.2rem;

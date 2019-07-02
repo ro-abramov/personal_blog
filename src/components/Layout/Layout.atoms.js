@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import styled, { createGlobalStyle } from 'styled-components'
 import { colors } from '../../utils/css/mixins'
-import { CenterContent } from '../atoms'
+import { CenterContent } from '../CenterContent'
 
 export const GlobalStyles = createGlobalStyle`
   body {

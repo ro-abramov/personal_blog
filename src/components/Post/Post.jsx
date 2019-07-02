@@ -3,7 +3,7 @@ import { DiscussionEmbed } from 'disqus-react'
 
 import * as atoms from './Post.atoms'
 import { BackGroundImage } from './components/BackGroundImage'
-import { CenterContent } from '../atoms'
+import { CenterContent } from '../CenterContent'
 
 export function Post({ title, img, date, timeToRead, content, slug }) {
     const disqusConfig = {

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as atoms from './atoms'
-import { SectionTitle } from '../atoms/index'
+import { SectionTitle } from '../SectionTitle'
 
 export function Profile() {
     const {

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { colors, breakpoints, centerContent } from '../../../../utils/css/mixins'
+import { colors, breakpoints } from '../../../../utils/css/mixins'
+import { CenterContent } from '../../../CenterContent'
 
 export const BackGroundImageWrapper = styled.div`
     position: relative;
@@ -36,7 +37,7 @@ export const BackGroundImagePicture = styled.div`
     }
 `
 
-export const BackGroundImageContainer = styled.div`
+export const BackGroundImageContainer = styled(CenterContent)`
     color: #fff;
-    ${centerContent({ topMargin: 0 })}
+    margin: 0 auto;
 `

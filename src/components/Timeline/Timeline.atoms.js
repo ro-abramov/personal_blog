@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import { cssConstants, colors, breakpoints } from '../../utils/css/mixins'
 
+export const TimelineSectionWrapper = styled.section`
+    padding: 2rem 0;
+    background-color: ${colors.fullDark};
+    color: ${colors.light};
+    margin: 0 auto;
+`
+
 export const TimelineContainer = styled.ul`
     padding: 0;
     list-style: none;
@@ -10,7 +17,7 @@ export const TimelineContainer = styled.ul`
         position: absolute;
         width: 0.4rem;
         left: calc(50% - 0.2rem);
-        background: linear-gradient(0deg, ${colors.light}, ${colors.secondary});
+        background: linear-gradient(0deg, ${colors.fullDark}, ${colors.accent});
         top: 0.5rem;
         height: calc(100% - 0.5rem);
         content: '';
@@ -31,6 +38,7 @@ export const TimelineInfoBox = styled.article`
     box-shadow: ${cssConstants.boxShadow};
     ${breakpoints.mobile} {
         width: 100%;
+        padding: 1rem 0.4rem;
     }
     &:after {
         content: '';
@@ -110,9 +118,7 @@ export const TimelineInfoTechContainer = styled.ul`
     flex-wrap: wrap;
 `
 export const TimelineInfoTechTag = styled.li`
-    background-color: darkcyan;
-    margin: 0.1rem 0.2rem !important;
-    padding: 0.2rem 0.4rem;
+    margin: 0.2rem !important;
     font-size: 0.8rem;
     border-radius: 0.2rem;
     color: #fff;
@@ -121,7 +127,6 @@ export const TimelineInfoTechTag = styled.li`
 export const TimelineDate = styled.div`
     margin-top: 1rem;
     font-size: 1rem;
-    color: #5c5c5c;
 
     ${breakpoints.mobile} {
         display: none;

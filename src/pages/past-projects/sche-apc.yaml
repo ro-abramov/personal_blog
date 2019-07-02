@@ -12,13 +12,12 @@ duties:
 techStack:
     - React
     - Redux
+    - ES6+
     - Redux Thunk
+    - Node
     - jQuery
     - Hyperapp
     - LessCSS
     - Webpack
     - Cypress
     - Pug
-    - Java
-    - ATG
-    - JSP

@@ -12,7 +12,7 @@ duties:
     - Establish code review culture and rules
 techStack:
     - React
-    - TypeScript
+    - Typescript
     - SASS
     - React Testing Library
     - Docker

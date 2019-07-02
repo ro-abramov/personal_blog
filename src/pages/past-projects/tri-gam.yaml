@@ -9,8 +9,8 @@ duties:
     - Develop widgets using Polymer framework and D3.js for data visualization
     - Work on cli utility to manage dependencies of components across multi repositories
 techStack:
+    - ES6+
     - Polymer
     - D3
     - SASS
     - bower
-    - .Net framework

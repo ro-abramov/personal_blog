@@ -9,15 +9,6 @@ duties:
     - Generalize and organize transmission of dates between front-end and back-end
     - Conduct demo sessions for a customer
 techStack:
-    - Javascript
+    - ES6+
     - jQuery
     - Bootstrap
-    - Java 8
-    - Tomcat 7
-    - Spring Core
-    - Spring MVC 4
-    - JPA (Hibernate)
-    - JSP
-    - JSTL
-    - Custom Tags
-    - Thymeleaf

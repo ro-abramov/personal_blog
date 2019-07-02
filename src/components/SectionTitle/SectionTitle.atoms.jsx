@@ -1,10 +1,14 @@
 import styled from 'styled-components'
-import { colors } from '../utils/css/mixins'
+import { colors, breakpoints } from '../../utils/css/mixins'
 
 export const SectionTitle = styled.h2`
     text-align: center;
     text-transform: uppercase;
-    font-size: 2rem;
     color: ${({ light = false }) => (light ? colors.light : colors.shade)};
-    margin: 2rem 0 2rem;
+    font-size: 1.6rem;
+    margin: 1.6rem 0;
+    ${breakpoints.mobilePlus} {
+        font-size: 2rem;
+        margin: 2rem 0;
+    }
 `

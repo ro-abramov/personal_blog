@@ -7,9 +7,9 @@ date: 2014-04-01
 duties:
     - Develop end-points on backend in laravel php framework according to REST model
     - Create documentation of end-points and maintain documentation
-    - Develop admin interface using SASS, ReactJS
+    - Develop admin interface using SASS, React
 techStack:
-    - ReactJS
+    - React
     - SASS
     - Laravel
     - php5

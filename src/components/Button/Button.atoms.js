@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { colors, cssConstants } from '../../utils/css/mixins'
+import { colors, cssConstants, breakpoints } from '../../utils/css/mixins'
 
 export const StyledButton = styled.button`
     display: inline-block;
     border: none;
     border-radius: 2px;
-    color: ${colors.light};
-    background-color: ${colors.main};
+    color: ${({ variant }) => (variant === 'accent' ? colors.shade : colors.light)};
+    background-color: ${({ variant }) => (variant === 'default' ? colors.main : colors[variant])};
     padding: 0.4rem 1.2rem;
     cursor: pointer;
     box-shadow: ${cssConstants.boxShadow};
@@ -16,5 +16,9 @@ export const StyledButton = styled.button`
     &:focus {
         box-shadow: ${cssConstants.boxShadowLarge};
         color: ${colors.light};
+    }
+
+    ${breakpoints.mobile} {
+        padding: 0.4rem 0.8rem;
     }
 `
