@@ -3,6 +3,7 @@ title: 'Creating an animated hamburger icon with react-spring'
 date: '2019-06-13'
 cover: ./cover.jpg
 coverImageOrientation: 'horizontal'
+lang: 'en'
 ---
 
 Through my career as web dev, I've created tons of custom "hamburger" menu icons/buttons with different animations. Working on my blog I realize that it maybe a good idea to write down how I tackle the task using React and awesome react animation library [react-spring](https://www.react-spring.io/).

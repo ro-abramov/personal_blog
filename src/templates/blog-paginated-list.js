@@ -37,6 +37,7 @@ export const query = graphql`
                         title
                         date(formatString: "MM/DD/YYYY")
                         coverImageOrientation
+                        lang
                         cover {
                             childImageSharp {
                                 fluid(maxWidth: 400, quality: 60) {

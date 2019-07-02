@@ -3,6 +3,7 @@ import Image from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import * as atoms from './atoms'
 import { SectionTitle } from '../SectionTitle'
+import { LangIcon } from '../LangIcon'
 
 export function Profile() {
     const {
@@ -32,15 +33,11 @@ export function Profile() {
                 <atoms.ProfileDescriptionContainer>
                     <atoms.ProfileNameWrapper>
                         <atoms.ProfileName>
-                            <span role="img" aria-label="In English">
-                                🇺🇸
-                            </span>
+                            <LangIcon lang="en" />
                             󠁧󠁢󠁥󠁮󠁧󠁿 Ruslan Abramov
                         </atoms.ProfileName>
                         <atoms.ProfileName>
-                            <span role="img" aria-label="In Russian">
-                                🇷🇺
-                            </span>
+                            <LangIcon lang="ru" />
                             󠁧󠁢󠁥󠁮󠁧󠁿 Руслан Абрамов
                         </atoms.ProfileName>
                     </atoms.ProfileNameWrapper>

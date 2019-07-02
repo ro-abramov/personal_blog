@@ -2,32 +2,37 @@ import React from 'react'
 import * as atoms from './Posts.atoms'
 import { Card } from '../Card/Card'
 import { ShareButton } from '../ShareButton'
+import { LangIcon } from '../LangIcon'
 
 export const Posts = ({ posts }) => {
     return (
         <atoms.PostsList>
-            {posts.map(({ node }) => (
-                <atoms.Post key={node.fields.slug} vertical={node.frontmatter.coverImageOrientation === 'vertical'}>
-                    <atoms.WrapperLink to={node.fields.slug}>
+            {posts.map(({ node: post }) => (
+                <atoms.Post key={post.fields.slug} vertical={post.frontmatter.coverImageOrientation === 'vertical'}>
+                    <atoms.WrapperLink to={post.fields.slug}>
                         <Card
-                            title={node.frontmatter.title}
-                            description={node.excerpt}
+                            title={post.frontmatter.title}
+                            description={post.excerpt}
                             renderImage={() => (
                                 <atoms.PostImage
-                                    fluid={node.frontmatter.cover.childImageSharp.fluid}
-                                    alt={node.frontmatter.title}
+                                    fluid={post.frontmatter.cover.childImageSharp.fluid}
+                                    alt={post.frontmatter.title}
                                 />
                             )}
                             renderFooter={() => (
                                 <>
-                                    <atoms.PostInfo>{node.frontmatter.date}</atoms.PostInfo>
+                                    <atoms.PostInfo>
+                                        <span>Language: </span>
+                                        <LangIcon lang={post.frontmatter.lang} />
+                                    </atoms.PostInfo>
                                     <atoms.PostInfo>
                                         <span role="img" aria-label="clock icon">
-                                            🕙{' '}
+                                            🕙
                                         </span>
-                                        {node.timeToRead} min read
+                                        <span> {post.timeToRead} min</span>
                                     </atoms.PostInfo>
-                                    <ShareButton slug={node.fields.slug} title={node.frontmatter.title} />
+                                    <atoms.PostInfo>{post.frontmatter.date}</atoms.PostInfo>
+                                    <ShareButton slug={post.fields.slug} title={post.frontmatter.title} />
                                 </>
                             )}
                         />

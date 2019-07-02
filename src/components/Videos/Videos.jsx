@@ -3,6 +3,7 @@ import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 import { GridElement } from '../Grid'
 import { SectionTitle } from '../SectionTitle'
 import * as atoms from './Videos.atoms'
+import { LangIcon } from '../LangIcon'
 
 const getImageUrl = id => `https://img.youtube.com/vi/${id}/mqdefault.jpg`
 
@@ -29,6 +30,12 @@ export function Videos({ videos }) {
                                 <img src={getImageUrl(video.videoId)} alt={`Cover for video ${video.name}`} />
                                 <atoms.VideoPlayIcon icon={faPlayCircle} />
                             </atoms.VideoImageWrapper>
+                        )}
+                        renderFooter={() => (
+                            <span>
+                                <span>Language: </span>
+                                <LangIcon lang={video.lang} />
+                            </span>
                         )}
                     />
                 </GridElement>
