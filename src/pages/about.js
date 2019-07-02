@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { Layout } from '../components/Layout'
@@ -30,14 +30,27 @@ function About() {
             }
         }
     `)
+    const [selectedTags, setSelectedTags] = useState(new Set())
+    const pushTag = tag => setSelectedTags(prevTags => new Set(prevTags).add(tag))
+    const pullTag = tag =>
+        setSelectedTags(prevTags => {
+            const clonedTagsState = new Set(prevTags)
+            clonedTagsState.delete(tag)
+            return clonedTagsState
+        })
     return (
         <Layout>
             <SEO title="About me" />
             <Profile />
             <CenterContent>
-                <TagsCloud pastProjects={pastProjects} />
+                <TagsCloud
+                    pastProjects={pastProjects}
+                    selectedTags={selectedTags}
+                    onPushTag={pushTag}
+                    onPullTag={pullTag}
+                />
             </CenterContent>
-            <Timeline pastProjects={pastProjects} />
+            <Timeline pastProjects={pastProjects} selectedTags={selectedTags} onPushTag={pushTag} onPullTag={pullTag} />
         </Layout>
     )
 }

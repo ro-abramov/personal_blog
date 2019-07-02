@@ -42,15 +42,15 @@ const sortTechStack = techStack => {
     })
 }
 
-const getTagVariant = (tag, tagConfig) => {
+const getTagVariant = (tag, tagConfig, isTagSelected) => {
     const number = tag.length + tagConfig.weigh
-    if (number % 5 === 0) {
+    if (isTagSelected) {
         return 'accent'
     }
     return number % 2 === 0 ? 'default' : 'secondary'
 }
 
-export function TagsCloud({ pastProjects }) {
+export function TagsCloud({ pastProjects, selectedTags, onPushTag, onPullTag }) {
     const tags = useMemo(
         () => sortTechStack(applyTagWeights({ duration: 4, actuality: 3 })(getAllTechStack(pastProjects))),
         [pastProjects],
@@ -62,9 +62,13 @@ export function TagsCloud({ pastProjects }) {
             <SectionTitle>Stuff that I knew</SectionTitle>
             <atoms.TagsList>
                 {tagsToRender.map(([tag, tagConfig]) => {
+                    const isTagSelected = selectedTags.has(tag)
                     return (
                         <atoms.TagsElement key={tag}>
-                            <Button variant={getTagVariant(tag, tagConfig)}>
+                            <Button
+                                onClick={() => (isTagSelected ? onPullTag(tag) : onPushTag(tag))}
+                                variant={getTagVariant(tag, tagConfig, isTagSelected)}
+                            >
                                 #{tag} ({tagConfig.yearsOfUse}y)
                             </Button>
                         </atoms.TagsElement>
