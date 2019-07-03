@@ -29,6 +29,13 @@ const findUserByEmail = async email => {
     const {
         data: { items },
     } = await axios.get(`https://api.github.com/search/users?q=${email}`)
+    if (items.length === 0) {
+        return {
+            login: email,
+            email,
+            avatar_url: '/images/avatar.svg',
+        }
+    }
     const [user] = items
     const {
         data: { name },
