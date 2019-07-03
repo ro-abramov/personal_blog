@@ -14,6 +14,7 @@ const BlogPost = ({ data }) => {
                 title={post.frontmatter.title}
                 date={post.frontmatter.date}
                 timeToRead={post.timeToRead}
+                authors={post.frontmatter.authors}
                 content={post.html}
                 img={post.frontmatter.cover.childImageSharp.fluid}
                 slug={post.fields.slug}
@@ -30,6 +31,10 @@ export const query = graphql`
             frontmatter {
                 title
                 date(formatString: "MM/DD/YYYY")
+                authors {
+                    name
+                    avatar
+                }
                 cover {
                     childImageSharp {
                         fluid(maxWidth: 1200, quality: 100) {
