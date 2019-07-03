@@ -15,6 +15,7 @@ const BlogPost = ({ data }) => {
                 date={post.frontmatter.date}
                 timeToRead={post.timeToRead}
                 authors={post.frontmatter.authors}
+                photographer={post.frontmatter.photographer}
                 content={post.html}
                 img={post.frontmatter.cover.childImageSharp.fluid}
                 slug={post.fields.slug}
@@ -34,6 +35,10 @@ export const query = graphql`
                 authors {
                     name
                     avatar
+                }
+                photographer {
+                    name
+                    login
                 }
                 cover {
                     childImageSharp {

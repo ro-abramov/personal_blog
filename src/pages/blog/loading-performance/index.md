@@ -2,6 +2,9 @@
 title: Some advice on loading performance
 date: '2018-11-12'
 cover: ./cover.jpg
+photographer:
+    login: 'marcojodoin'
+    name: 'Marc-Olivier Jodoin'
 coverImageOrientation: 'horizontal'
 lang: 'en'
 ---

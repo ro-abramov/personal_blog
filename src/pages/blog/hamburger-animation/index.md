@@ -2,6 +2,9 @@
 title: 'Creating an animated hamburger icon with react-spring'
 date: '2019-06-13'
 cover: ./cover.jpg
+photographer:
+    login: 'mr_vero'
+    name: 'Irvan Smith'
 coverImageOrientation: 'horizontal'
 lang: 'en'
 ---

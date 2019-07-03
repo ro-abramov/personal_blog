@@ -6,7 +6,7 @@ import { BackGroundImage } from './components/BackGroundImage'
 import { CenterContent } from '../CenterContent'
 import { AuthorsList } from './components/AuthorsList'
 
-export function Post({ title, img, date, timeToRead, content, slug, authors }) {
+export function Post({ title, img, date, timeToRead, content, slug, authors, photographer }) {
     const disqusConfig = {
         url: `https://roabramov.netlify.com${slug}`,
         identifier: slug,
@@ -15,7 +15,7 @@ export function Post({ title, img, date, timeToRead, content, slug, authors }) {
     const shouldShowAuthors = authors.length > 1 || authors[0].name !== 'Ruslan Abramov'
     return (
         <>
-            <BackGroundImage alt={title} fluid={img}>
+            <BackGroundImage alt={title} fluid={img} photographer={photographer}>
                 <atoms.PostInfoContainer>
                     <atoms.PostTitle>{title}</atoms.PostTitle>
                     <atoms.PostInfo>{date}</atoms.PostInfo>

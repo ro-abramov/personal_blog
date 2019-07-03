@@ -41,3 +41,36 @@ export const BackGroundImageContainer = styled(CenterContent)`
     color: #fff;
     margin: 0 auto;
 `
+
+export const BackGroundImageLink = styled.a`
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: ${colors.light};
+    text-decoration: none;
+    padding: 0.2rem 0.3rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto,
+        'Segoe UI', Arial, sans-serif;
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 1.2;
+    display: inline-block;
+    border-radius: 3px;
+    span {
+        display: inline-block;
+        padding: 2px 3px;
+    }
+    svg {
+        height: 0.6rem;
+        width: auto;
+        position: relative;
+        vertical-align: middle;
+        top: -2px;
+        fill: white;
+    }
+    &:hover {
+        svg {
+            fill: ${colors.mainActive};
+        }
+    }
+`
