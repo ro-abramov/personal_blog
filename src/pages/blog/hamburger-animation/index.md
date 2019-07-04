@@ -7,6 +7,10 @@ photographer:
     name: 'Irvan Smith'
 coverImageOrientation: 'horizontal'
 lang: 'en'
+authors:
+    - name: Ruslan Abramov
+      email: r.o.abramov@gmail.com
+      avatar: https://avatars1.githubusercontent.com/u/13414557?v=4
 ---
 
 Through my career as web dev, I've created tons of custom "hamburger" menu icons/buttons with different animations. Working on my blog I realize that it maybe a good idea to write down how I tackle the task using React and awesome react animation library [react-spring](https://www.react-spring.io/).

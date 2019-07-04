@@ -17,9 +17,9 @@ export function Layout({ children, isMainPage = false, hideStickyContact = false
                 <atoms.Main>{children}</atoms.Main>
                 <atoms.Footer>
                     <atoms.FooterContent>
-                        <span>© Ruslan Abramov, {new Date().getFullYear()}</span>
+                        <span>©&nbsp;Ruslan&nbsp;Abramov, {new Date().getFullYear()}</span>
                         <Contacts />
-                        <span>
+                        <atoms.FooterIssueContent>
                             <span>Found an issue? </span>
                             <a
                                 href="https://github.com/snak1t/personal_blog/issues/new"
@@ -28,7 +28,7 @@ export function Layout({ children, isMainPage = false, hideStickyContact = false
                             >
                                 Submit please.
                             </a>
-                        </span>
+                        </atoms.FooterIssueContent>
                     </atoms.FooterContent>
                 </atoms.Footer>
                 {hideStickyContact ? null : <ContactsShort />}

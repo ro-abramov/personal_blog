@@ -12,6 +12,7 @@ export const Grid = styled(CenterContent)`
     ${breakpoints.mobile} {
         display: flex;
         flex-direction: column;
+        margin: 0.6rem auto;
     }
 `
 

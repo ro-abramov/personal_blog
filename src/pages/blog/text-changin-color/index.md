@@ -7,6 +7,10 @@ photographer:
     name: 'Chris Lawton'
 coverImageOrientation: 'horizontal'
 lang: 'en'
+authors:
+    - name: Ruslan Abramov
+      email: r.o.abramov@gmail.com
+      avatar: https://avatars1.githubusercontent.com/u/13414557?v=4
 ---
 
 Hi all! Today I am going to tell you about a simple but impressive css trick. Are you ready? Then lets go!

@@ -17,6 +17,10 @@ export const PostInfo = styled.div`
 
 export const PostContent = styled.section`
     margin-top: 2rem;
+    font-size: 0.8rem;
+    ${breakpoints.mobilePlus} {
+        font-size: 1rem;
+    }
 `
 
 export const PostInfoContainer = styled.section`

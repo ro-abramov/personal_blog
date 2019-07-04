@@ -7,6 +7,10 @@ photographer:
     name: 'Marc-Olivier Jodoin'
 coverImageOrientation: 'horizontal'
 lang: 'en'
+authors:
+    - name: Ruslan Abramov
+      email: r.o.abramov@gmail.com
+      avatar: https://avatars1.githubusercontent.com/u/13414557?v=4
 ---
 
 It shouldn't be a secret that modern web apps are supposed to load in a thousand of a second, and work as smooth as native app. Tools for finding application bottlenecks are created for developers. For instance, in Google Chrome there are really awesome tools for auditing application performance, and other vendors also try not to fall behind (probably). React team has made some improvements in its devtool extension, and has added a new profiler. If you haven't tried it yet, then you definitely should at least read a [blog post](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html).

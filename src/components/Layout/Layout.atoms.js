@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import styled, { createGlobalStyle } from 'styled-components'
-import { colors } from '../../utils/css/mixins'
+import { colors, breakpoints } from '../../utils/css/mixins'
 import { CenterContent } from '../CenterContent'
 
 export const GlobalStyles = createGlobalStyle`
@@ -41,6 +41,18 @@ export const FooterContent = styled(CenterContent)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    > * {
+        flex: 1;
+    }
+`
+
+export const FooterIssueContent = styled.span`
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    ${breakpoints.mobilePlus} {
+        display: inline;
+    }
 `
 
 export const StyledLink = styled(Link)`
