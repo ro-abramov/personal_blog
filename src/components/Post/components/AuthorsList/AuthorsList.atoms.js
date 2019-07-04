@@ -24,6 +24,7 @@ export const AuthorsListElement = styled.li`
         height: 4rem;
         object-fit: cover;
         padding: 0;
+        margin: 0;
         border-radius: 100%;
     }
     span {

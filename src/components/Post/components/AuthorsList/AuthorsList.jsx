@@ -10,7 +10,7 @@ export function AuthorsList({ authors }) {
             <atoms.AuthorsListContainer>
                 {authors.map(author => {
                     return (
-                        <atoms.AuthorsListElement>
+                        <atoms.AuthorsListElement key={author.name}>
                             <img src={author.avatar} alt={`avatar of ${author.name}`} />
                             <span>{author.name}</span>
                         </atoms.AuthorsListElement>
