@@ -4,13 +4,14 @@ import { CenterContent } from '../../../CenterContent'
 
 export const BackGroundImageWrapper = styled.div`
     position: relative;
-    height: 30rem;
+    min-height: 15rem;
+    height: auto;
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    ${breakpoints.mobile} {
-        height: 15rem;
+    ${breakpoints.mobilePlus} {
+        min-height: 30rem;
     }
 `
 
