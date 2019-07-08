@@ -9,12 +9,16 @@ export const Cover = styled.div`
     height: 37.5rem;
     z-index: -1;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     ${breakpoints.mobile} {
         height: auto;
     }
     & > * {
         position: relative;
         filter: blur(3px);
+        flex: 1;
     }
     &:after {
         position: absolute;
