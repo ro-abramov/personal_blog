@@ -5,9 +5,9 @@ import { Link } from '../Link'
 import * as atoms from './RecentPosts.atoms'
 
 const layoutElementsConfigs = [
-    { row: '1 / span 2', col: '9 / span 4' },
-    { row: '3 / span 2', col: '7 / span 4' },
-    { row: '5 / span 2', col: '5 / span 4' },
+    { row: '1 / span 2', col: '8 / span 5' },
+    { row: '3 / span 2', col: '6 / span 5' },
+    { row: '5 / span 2', col: '4 / span 5' },
 ]
 
 export function RecentPosts({ posts }) {

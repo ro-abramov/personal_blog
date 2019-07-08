@@ -46,7 +46,7 @@ export const ProfileNameWrapper = styled.header`
 export const ProfileName = styled.span`
     display: inline-block;
     margin-right: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     ${breakpoints.mobile} {
         display: block;
         text-align: center;
@@ -54,5 +54,5 @@ export const ProfileName = styled.span`
 `
 
 export const ProfileSummary = styled.p`
-    font-size: 1rem;
+    font-size: 0.9rem;
 `

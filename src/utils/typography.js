@@ -9,11 +9,11 @@ const typography = new Typography({
             styles: ['400'],
         },
         {
-            name: 'Roboto Condensed',
+            name: 'Roboto',
             styles: ['400', '700'],
         },
     ],
-    bodyFontFamily: ['Roboto Condensed', 'georgia', 'sans-serif'],
+    bodyFontFamily: ['Roboto', 'georgia', 'sans-serif'],
 })
 
 export const { scale, rhythm, options } = typography

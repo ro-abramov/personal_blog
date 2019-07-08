@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${colors.shade} !important;
     overflow-x: hidden;
     font-kerning: initial;
+    letter-spacing: 0;
   }
 `
 

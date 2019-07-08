@@ -30,14 +30,15 @@ export const Cover = styled.div`
 
 export const ShortInfo = styled.div`
     color: #fff;
-    ${breakpoints.mobile} {
-        font-size: 0.8rem;
+    font-size: 0.8rem;
+    ${breakpoints.mobilePlus} {
+        font-size: 0.9rem;
     }
 `
 
 export const ShortInfoButtonsGroup = styled.div`
     margin: 1rem 0;
-
+    font-size: 0.8rem;
     & > *:first-child {
         margin-right: 1rem;
     }
