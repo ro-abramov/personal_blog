@@ -5,6 +5,8 @@ import { colors, breakpoints } from '../../utils/css/mixins'
 
 export const WrapperLink = styled(Link)`
     text-decoration: none;
+    display: flex;
+    height: 100%;
 `
 
 export const PostsList = styled.ul`

@@ -44,9 +44,10 @@ export const CardImageWrapper = styled.div`
 export const CardImage = styled.img``
 
 export const CardContent = styled.div`
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
+    flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     ${breakpoints.mobile} {
@@ -60,6 +61,8 @@ export const CardWrapper = styled.article`
     border-radius: ${cssConstants.borderRadius};
     box-shadow: ${cssConstants.boxShadow};
     margin-top: ${({ withPadding }) => (withPadding ? 3 : 0)}rem;
+    display: flex;
+    flex-direction: column;
     ${CardTitle} {
         color: ${({ dark }) => (dark ? colors.light : colors.shade)};
     }
