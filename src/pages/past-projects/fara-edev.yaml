@@ -5,8 +5,8 @@ location: Ryazan, Russia
 position: Key Developer
 date: 2017-04-01
 duties:
-    - Prepare list of technical components, that should be implemented for each module
-    - Prepare documentation, which contains Module description, list of components, and rough estimation
+    - preparing list of technical components, that should be implemented for each module
+    - preparing documentation, which contains Module description, list of components, and rough estimation
 techStack:
     - name: Angular
       color: '#be0d2d'

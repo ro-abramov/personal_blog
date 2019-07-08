@@ -1,13 +1,13 @@
 type: Project
 title: EPAM Systems Project 1
-description: Worked on an enterprise scheduling system that specializes in using complex data driven rules in order to determine staffing requirements and find staff to fill vacancies.
+description: Enterprise scheduling system that specializes in using complex data driven rules in order to determine staffing requirements and find staff to fill vacancies.
 location: Ryazan, Russia
 position: Developer
 date: 2016-11-01
 duties:
-    - Perform Internationalization and Localization of UI
-    - Generalize and organize transmission of dates between front-end and back-end
-    - Conduct demo sessions for a customer
+    - performing Internationalization and Localization of UI
+    - generalizing and organize transmission of dates between front-end and back-end
+    - conducting demo sessions for a customer
 techStack:
     - name: ES6+
       color: '#fade34'

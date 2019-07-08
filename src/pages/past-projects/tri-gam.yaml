@@ -5,9 +5,9 @@ location: Ryazan, Russia
 position: Key Developer
 date: 2017-02-01
 duties:
-    - Write JavaScript unit-tests using Karma/Jasmine
-    - Develop widgets using Polymer framework and D3.js for data visualization
-    - Work on cli utility to manage dependencies of components across multi repositories
+    - writing JavaScript unit-tests using Karma/Jasmine
+    - developing widgets using Polymer framework and D3.js for data visualization
+    - working on cli utility to manage dependencies of components across multi repositories
 techStack:
     - name: ES6+
       color: '#fade34'

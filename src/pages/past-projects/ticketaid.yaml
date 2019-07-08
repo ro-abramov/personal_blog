@@ -1,17 +1,17 @@
 type: 'Project'
 title: EPAM Systems Project 4
-description: Worked on a corporate ticket allocation web app, designed to give employees access to tickets whilst raising funds for charities supporting global, regional and local causes, all at the same time.
+description: A corporate ticket allocation web app, designed to give employees access to tickets whilst raising funds for charities supporting global, regional and local causes, all at the same time.
 location: Ryazan, Russia
 position: Key Developer
 date: 2017-05-01
 duties:
-    - Refactor and restructure application source code to follow best practices accepted in Angular documentation
-    - Migrate application from self created webpack config to angular-cli
-    - Introduce code splitting to reduce app load time
-    - Introduce approach for a state management in angular application
-    - Work on load time performance optimization of main page to increase bounce rate (95 score according to lighthouse report)
-    - Work on authentication and role model both on client and server side
-    - Work on email subscription model and create templates for html emails
+    - refactoring and restructuring application source code to follow best practices accepted in Angular documentation
+    - migrating application from self created webpack config to angular-cli
+    - introducing code splitting to reduce app load time
+    - introducing approach for a state management in angular application
+    - working on load time performance optimization of main page to increase bounce rate (95 score according to lighthouse report)
+    - working on authentication and role model both on client and server side
+    - working on email subscription model and create templates for html emails
 techStack:
     - name: Angular
       color: '#be0d2d'
