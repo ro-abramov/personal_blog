@@ -10,14 +10,36 @@ duties:
     - Work on load time performance optimization of Product Detail Page (PDP) - reduce load time by 200%, stabilize amount of transferred data, increased bounce rate by 120%
     - Develop tool for selecting an appropriate solution based on specific user requirements
 techStack:
-    - React
-    - Redux
-    - ES6+
-    - Redux Thunk
-    - Node
-    - jQuery
-    - Hyperapp
-    - LessCSS
-    - Webpack
-    - Cypress
-    - Pug
+    - name: React
+      color: '#61dafb'
+      textColor: '#222222'
+    - name: Redux
+      color: '#7649bb'
+      textColor: '#ffffff'
+    - name: ES6+
+      color: '#fade34'
+      textColor: '#343432'
+    - name: Redux Thunk
+      color: '#7649bb'
+      textColor: '#ffffff'
+    - name: Node
+      color: '#83cd29'
+      textColor: '#ffffff'
+    - name: Jest
+      color: '#c53d15'
+      textColor: '#fefff9'
+    - name: jQuery
+      color: '#1669ad'
+      textColor: '#ffffff'
+    - name: LessCSS
+      color: '#1d365e'
+      textColor: '#ffffff'
+    - name: Webpack
+      color: '#80c7ff'
+      textColor: '#ffffff'
+    - name: Cypress
+      color: '#23262c'
+      textColor: '#ffffff'
+    - name: Pug
+      color: '#b77f72'
+      textColor: '#ffffff'

@@ -13,12 +13,30 @@ duties:
     - Work on authentication and role model both on client and server side
     - Work on email subscription model and create templates for html emails
 techStack:
-    - Angular
-    - Typescript
-    - RxJS
-    - Node
-    - Express
-    - Docker
-    - Kubernetes
-    - Foundation
-    - Pug
+    - name: Angular
+      color: '#be0d2d'
+      textColor: '#ffffff'
+    - name: Typescript
+      color: '#1a77c6'
+      textColor: '#f8f8f8'
+    - name: RxJS
+      color: '#e90f8d'
+      textColor: '#ffffff'
+    - name: Node
+      color: '#83cd29'
+      textColor: '#ffffff'
+    - name: Express
+      color: '#828282'
+      textColor: '#ffffff'
+    - name: Docker
+      color: '#176da5'
+      textColor: '#ffffff'
+    - name: Kubernetes
+      color: '#326de6'
+      textColor: '#ffffff'
+    - name: Foundation
+      color: '#3084c0'
+      textColor: '#eaf7fe'
+    - name: Pug
+      color: '#b77f72'
+      textColor: '#ffffff'

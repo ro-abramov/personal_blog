@@ -1,22 +1,22 @@
 import React, { useMemo, useState } from 'react'
 import { differenceInDays } from 'date-fns'
-import { Button } from '../Button'
 import { SectionTitle } from '../SectionTitle'
 import * as atoms from './TagsClound.atoms'
+import { Tag } from './Tag'
 
 function getAllTechStack(stacks) {
     const allStackMap = new Map()
     const copiedStacks = stacks.slice().reverse()
     copiedStacks.forEach(({ node: project }, index) => {
-        project.techStack.forEach(techStack => {
-            const techStackTag = techStack.trim().toLowerCase()
+        project.techStack.forEach(({ name, color, textColor }) => {
+            const techStackTag = name.trim().toLowerCase()
             const nextElement = copiedStacks[index + 1]
             const endDate = nextElement ? new Date(nextElement.node.date) : new Date()
             if (!allStackMap.has(techStackTag)) {
-                allStackMap.set(techStackTag, { startFrom: new Date(project.date), endDate })
+                allStackMap.set(techStackTag, { startFrom: new Date(project.date), endDate, color, textColor })
             } else {
                 const prevElement = allStackMap.get(techStackTag)
-                allStackMap.set(techStackTag, { startFrom: prevElement.startFrom, endDate })
+                allStackMap.set(techStackTag, { startFrom: prevElement.startFrom, endDate, color, textColor })
             }
         })
     })
@@ -36,19 +36,7 @@ const applyTagWeights = ({ duration, actuality }) => stacksMap => {
     return weightedMap
 }
 
-const sortTechStack = techStack => {
-    return Array.from(techStack).sort((c1, c2) => {
-        return c2[1].weigh - c1[1].weigh
-    })
-}
-
-const getTagVariant = (tag, tagConfig, isTagSelected) => {
-    const number = tag.length + tagConfig.weigh
-    if (isTagSelected) {
-        return 'accent'
-    }
-    return number % 2 === 0 ? 'default' : 'secondary'
-}
+const sortTechStack = techStack => Array.from(techStack).sort((c1, c2) => c2[1].weigh - c1[1].weigh)
 
 export function TagsCloud({ pastProjects, selectedTags, onPushTag, onPullTag }) {
     const tags = useMemo(
@@ -62,15 +50,18 @@ export function TagsCloud({ pastProjects, selectedTags, onPushTag, onPullTag }) 
             <SectionTitle>Stuff that I knew</SectionTitle>
             <atoms.TagsList>
                 {tagsToRender.map(([tag, tagConfig]) => {
-                    const isTagSelected = selectedTags.has(tag)
                     return (
                         <atoms.TagsElement key={tag}>
-                            <Button
-                                onClick={() => (isTagSelected ? onPullTag(tag) : onPushTag(tag))}
-                                variant={getTagVariant(tag, tagConfig, isTagSelected)}
+                            <Tag
+                                onPullTag={onPullTag}
+                                onPushTag={onPushTag}
+                                selectedTags={selectedTags}
+                                tag={tag}
+                                color={tagConfig.textColor}
+                                backgroundColor={tagConfig.color}
                             >
                                 #{tag} ({tagConfig.yearsOfUse}y)
-                            </Button>
+                            </Tag>
                         </atoms.TagsElement>
                     )
                 })}

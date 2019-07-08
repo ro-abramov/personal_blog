@@ -9,8 +9,18 @@ duties:
     - Develop widgets using Polymer framework and D3.js for data visualization
     - Work on cli utility to manage dependencies of components across multi repositories
 techStack:
-    - ES6+
-    - Polymer
-    - D3
-    - SASS
-    - bower
+    - name: ES6+
+      color: '#fade34'
+      textColor: '#343432'
+    - name: Polymer
+      color: '#f97d9a'
+      textColor: '#0d47a1'
+    - name: D3
+      color: '#ffffff'
+      textColor: '#f68849'
+    - name: SASS
+      color: '#c76396'
+      textColor: '#f8f8f8'
+    - name: bower
+      color: '#ffffff'
+      textColor: '#f15629'

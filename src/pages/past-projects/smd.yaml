@@ -11,12 +11,33 @@ duties:
     - Create docker images with multi-staged builds for front-end application and for reverse-proxy
     - Establish code review culture and rules
 techStack:
-    - React
-    - Typescript
-    - SASS
-    - React Testing Library
-    - Docker
-    - OpenShift
-    - Jenkins
-    - Gerrit
-    - Sonar
+    - name: React
+      color: '#61dafb'
+      textColor: '#222222'
+    - name: Typescript
+      color: '#1a77c6'
+      textColor: '#f8f8f8'
+    - name: SASS
+      color: '#c76396'
+      textColor: '#f8f8f8'
+    - name: React Testing Library
+      color: '#2f3d4e'
+      textColor: '#ffffff'
+    - name: Jest
+      color: '#c53d15'
+      textColor: '#fefff9'
+    - name: Docker
+      color: '#176da5'
+      textColor: '#ffffff'
+    - name: OpenShift
+      color: '#cb0400'
+      textColor: '#ffffff'
+    - name: Jenkins
+      color: '#335061'
+      textColor: '#ffffff'
+    - name: Gerrit
+      color: '#aafeaa'
+      textColor: '#f80701'
+    - name: Sonar
+      color: '#000'
+      textColor: '#fff'

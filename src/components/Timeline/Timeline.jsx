@@ -6,7 +6,7 @@ import { faCogs } from '@fortawesome/free-solid-svg-icons'
 import { colors } from '../../utils/css/mixins'
 import { SectionTitle } from '../SectionTitle'
 import { CenterContent } from '../CenterContent'
-import { Button } from '../Button'
+import { Tag } from '../TagsCloud'
 
 export function Timeline({ pastProjects, selectedTags, onPullTag, onPushTag }) {
     const projectsToShow = useMemo(() => {
@@ -16,7 +16,7 @@ export function Timeline({ pastProjects, selectedTags, onPullTag, onPushTag }) {
         return pastProjects.filter(({ node: pastProject }) => {
             return (
                 pastProject.techStack &&
-                pastProject.techStack.some(techStack => selectedTags.has(techStack.toLowerCase()))
+                pastProject.techStack.some(techStack => selectedTags.has(techStack.name.toLowerCase()))
             )
         })
     }, [pastProjects, selectedTags])
@@ -47,19 +47,20 @@ export function Timeline({ pastProjects, selectedTags, onPullTag, onPushTag }) {
                                     <atoms.TimelineInfoTechContainer>
                                         {pastProject.techStack &&
                                             pastProject.techStack.map(tech => {
-                                                const techStack = tech.toLowerCase()
-                                                const isSelected = selectedTags.has(techStack)
+                                                const techStack = tech.name.toLowerCase()
 
                                                 return (
-                                                    <atoms.TimelineInfoTechTag key={tech}>
-                                                        <Button
-                                                            variant={isSelected ? 'accent' : 'default'}
-                                                            onClick={() =>
-                                                                isSelected ? onPullTag(techStack) : onPushTag(techStack)
-                                                            }
+                                                    <atoms.TimelineInfoTechTag key={techStack}>
+                                                        <Tag
+                                                            tag={techStack}
+                                                            selectedTags={selectedTags}
+                                                            onPullTag={onPullTag}
+                                                            onPushTag={onPushTag}
+                                                            color={tech.textColor}
+                                                            backgroundColor={tech.color}
                                                         >
                                                             #{techStack}
-                                                        </Button>
+                                                        </Tag>
                                                     </atoms.TimelineInfoTechTag>
                                                 )
                                             })}

@@ -9,9 +9,21 @@ duties:
     - Participate in code reviews
     - Create and improve unit-tests with Jasmine - increase code coverage up to 80%
 techStack:
-    - React
-    - SASS
-    - Bootstrap
-    - Express
-    - mysql
-    - Node
+    - name: React
+      color: '#61dafb'
+      textColor: '#222222'
+    - name: SASS
+      color: '#c76396'
+      textColor: '#f8f8f8'
+    - name: Bootstrap
+      color: '#5b3e84'
+      textColor: '#ffffff'
+    - name: Express
+      color: '#828282'
+      textColor: '#ffffff'
+    - name: mysql
+      color: '#4479a1'
+      textColor: '#e6892e'
+    - name: Node
+      color: '#83cd29'
+      textColor: '#ffffff'

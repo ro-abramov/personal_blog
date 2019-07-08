@@ -24,7 +24,11 @@ function About() {
                         location
                         position
                         date(formatString: "MMM, YYYY")
-                        techStack
+                        techStack {
+                            name
+                            color
+                            textColor
+                        }
                     }
                 }
             }

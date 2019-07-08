@@ -9,6 +9,12 @@ duties:
     - Generalize and organize transmission of dates between front-end and back-end
     - Conduct demo sessions for a customer
 techStack:
-    - ES6+
-    - jQuery
-    - Bootstrap
+    - name: ES6+
+      color: '#fade34'
+      textColor: '#343432'
+    - name: jQuery
+      color: '#1669ad'
+      textColor: '#ffffff'
+    - name: Bootstrap
+      color: '#5b3e84'
+      textColor: '#ffffff'

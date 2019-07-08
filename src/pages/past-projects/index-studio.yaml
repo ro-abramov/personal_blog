@@ -9,8 +9,18 @@ duties:
     - Create documentation of end-points and maintain documentation
     - Develop admin interface using SASS, React
 techStack:
-    - React
-    - SASS
-    - Laravel
-    - php5
-    - Apache
+    - name: React
+      color: '#61dafb'
+      textColor: '#222222'
+    - name: SASS
+      color: '#c76396'
+      textColor: '#f8f8f8'
+    - name: Laravel
+      color: '#ec4e43'
+      textColor: '#ffffff'
+    - name: php5
+      color: '#5f82ba'
+      textColor: '#ffffff'
+    - name: Apache
+      color: '#ffffff'
+      textColor: '#d12128'
