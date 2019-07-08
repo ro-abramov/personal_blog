@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { cssConstants, colors, breakpoints } from '../../utils/css/mixins'
 
 export const CardTitle = styled.h3`
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
     margin: 0;
     color: inherit;
     font-size: 0.9rem;
@@ -10,7 +10,7 @@ export const CardTitle = styled.h3`
 
 export const CardDescription = styled.p`
     color: inherit;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
 `
 
 export const CardFooter = styled.footer`

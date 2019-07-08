@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${colors.light};
     color: ${colors.shade} !important;
     overflow-x: hidden;
+    font-kerning: initial;
   }
 `
 
@@ -42,7 +43,9 @@ export const FooterContent = styled(CenterContent)`
     justify-content: space-between;
     align-items: center;
     > * {
-        flex: 1;
+        ${breakpoints.mobile} {
+            flex: 1;
+        }
     }
 `
 
